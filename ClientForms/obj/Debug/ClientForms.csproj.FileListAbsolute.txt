@@ -1,0 +1,11 @@
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\bin\Debug\ClientForms.exe.config
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\bin\Debug\ClientForms.exe
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\bin\Debug\ClientForms.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.csproj.AssemblyReference.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.FrmPrijava.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.Properties.Resources.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.csproj.GenerateResource.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.csproj.CoreCompileInputs.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.exe
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.pdb
