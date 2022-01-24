@@ -1,0 +1,11 @@
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.Main.exe.config
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.Main.exe
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.Main.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.AssemblyReference.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.frmServer.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.Properties.Resources.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.GenerateResource.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.CoreCompileInputs.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.exe
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.pdb
