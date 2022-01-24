@@ -61,6 +61,30 @@
     <Compile Include="GUIKontroler\PrijavaKontroler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UCDodajProizvodjaca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDodajProizvodjaca.Designer.cs">
+      <DependentUpon>UCDodajProizvodjaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDodajSlatkis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDodajSlatkis.Designer.cs">
+      <DependentUpon>UCDodajSlatkis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCObrisiSlatkis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCObrisiSlatkis.Designer.cs">
+      <DependentUpon>UCObrisiSlatkis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCPretragaSlatkisa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCPretragaSlatkisa.Designer.cs">
+      <DependentUpon>UCPretragaSlatkisa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmGlavna.resx">
       <DependentUpon>FrmGlavna.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +100,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCDodajProizvodjaca.resx">
+      <DependentUpon>UCDodajProizvodjaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCDodajSlatkis.resx">
+      <DependentUpon>UCDodajSlatkis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCObrisiSlatkis.resx">
+      <DependentUpon>UCObrisiSlatkis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCPretragaSlatkisa.resx">
+      <DependentUpon>UCPretragaSlatkisa.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

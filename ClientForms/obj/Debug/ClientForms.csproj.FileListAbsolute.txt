@@ -9,3 +9,8 @@ C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientFo
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.csproj.CoreCompileInputs.cache
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.exe
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.FrmGlavna.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCDodajProizvodjaca.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCDodajSlatkis.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCPretragaSlatkisa.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCObrisiSlatkis.resources

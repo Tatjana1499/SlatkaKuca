@@ -16,7 +16,8 @@ namespace ClientForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrijava());
+            //FrmPrijava()
+            Application.Run(new FrmGlavna());
         }
     }
 }
