@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain;
+using Server.Repozitorijum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace Server.SistemskeOperacije
 {
     public abstract class OpstaSO
     {
-        protected IRepository<IDomainObject> repository = new GenericDbRepository();
+        protected IRepozitorijum<IDomenskiObjekat> repository = new GenerickiDbRepozitorijum();
         public void ExecuteTemplate()
         {
             try

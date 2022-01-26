@@ -23,16 +23,21 @@ namespace ClientForms
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             prijavaKontroler.Prijava(this);
-            
         }
 
         private void txtKorIme_Click(object sender, EventArgs e)
         {
-            txtKorIme.BackColor = Color.White;
+            prijavaKontroler.Osvezi((TextBox)sender);
+
         }
         private void txtSifra_Click(object sender, EventArgs e)
         {
-            txtSifra.BackColor = Color.White;
+            prijavaKontroler.Osvezi((TextBox)sender);
+        }
+
+        private void FrmPrijava_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //NAPRAVI
         }
     }
 }

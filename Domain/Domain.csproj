@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DnevnaProdaja.cs" />
+    <Compile Include="IDomenskiObjekat.cs" />
     <Compile Include="Pakovanje.cs" />
     <Compile Include="ProdajnoMesto.cs" />
     <Compile Include="Proizvodjac.cs" />

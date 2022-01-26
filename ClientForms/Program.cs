@@ -22,21 +22,21 @@ namespace ClientForms
                 {
                     FrmPrijava frmPrijava = new FrmPrijava();
                     frmPrijava.ShowDialog();
-                    DialogResult result = frmPrijava.DialogResult;
+                    DialogResult rez = frmPrijava.DialogResult;
                     frmPrijava.Dispose();
 
-                    if (result == DialogResult.OK)
+                    if (rez == DialogResult.OK)
                     {
                         Application.Run(new FrmGlavna());
                     }
-                    if (result == DialogResult.Cancel)
+                    if (rez == DialogResult.Cancel)
                     {
                         break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Greska pri radu sa serverom!");
+                    MessageBox.Show("Greška pri radu sa serverom!");
                 }
             }
         }

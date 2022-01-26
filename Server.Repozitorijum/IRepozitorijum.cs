@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Server.Repozitorijum
 {
     public interface IRepozitorijum<T> where T : class
     {
-     //   List<T> GetAll(IDomainObject obj);
+        List<T> GetAll(IDomenskiObjekat obj);
         void Save(T obj);
         void Update(T obj);
         void Delete(T obj);

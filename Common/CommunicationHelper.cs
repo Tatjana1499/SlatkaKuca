@@ -22,7 +22,7 @@ namespace Common
         {
             formatter.Serialize(stream, obj);
         }
-        public T Receive<T>(T obj) where T : class
+        public T Receive<T>() where T : class
         {
             return (T)formatter.Deserialize(stream);
         }

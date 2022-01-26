@@ -44,5 +44,15 @@
     <Compile Include="OpstaSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{766AB29B-5068-4B56-B7CE-18BBF3E80B0D}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.Repozitorijum\Server.Repozitorijum.csproj">
+      <Project>{63891992-D87C-4AAD-96C7-7C54CD17653F}</Project>
+      <Name>Server.Repozitorijum</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

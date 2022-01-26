@@ -10,5 +10,6 @@ namespace Common
     {
         public Operacija Operacija { get; set; }
         public Object Poruka { get; set; }
+        public bool Uspesnost { get; set; }
     }
 }

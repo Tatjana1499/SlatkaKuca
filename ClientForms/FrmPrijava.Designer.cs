@@ -73,6 +73,7 @@ namespace ClientForms
             this.txtSifra.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSifra.Location = new System.Drawing.Point(326, 164);
             this.txtSifra.Name = "txtSifra";
+            this.txtSifra.PasswordChar = '*';
             this.txtSifra.Size = new System.Drawing.Size(199, 22);
             this.txtSifra.TabIndex = 3;
             this.txtSifra.Click += new System.EventHandler(this.txtSifra_Click);
@@ -101,6 +102,7 @@ namespace ClientForms
             this.Controls.Add(this.lblKorIme);
             this.Name = "FrmPrijava";
             this.Text = "Prijava";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrijava_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

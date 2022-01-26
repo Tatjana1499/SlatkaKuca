@@ -8,5 +8,7 @@ namespace Common
 {
     public enum Operacija
     {
+        Prijava,
+        Kraj
     }
 }

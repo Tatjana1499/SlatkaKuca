@@ -45,5 +45,15 @@
     <Compile Include="IRepozitorijum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{766AB29B-5068-4B56-B7CE-18BBF3E80B0D}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.BrokerBaze\Server.BrokerBaze.csproj">
+      <Project>{01F6E3C8-553E-4299-99DD-98C9A81A02D3}</Project>
+      <Name>Server.BrokerBaze</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
