@@ -14,7 +14,7 @@ namespace Server.BrokerBaze
         private SqlTransaction transaction;
         public Broker()
         {
-            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=D1-Prosoft;Integrated Security=True;");
+            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SlatkaKuca;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
         public void OpenConnection()
         {

@@ -1,17 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class DnevnaProdaja
+    [Serializable]
+    public class DnevnaProdaja : IDomenskiObjekat
     {
         public ProdajnoMesto ProdajnoMesto { get; set; }
         public Pakovanje Pakovanje { get; set; }
-        public int DatumProdaje { get; set; }
+        public DateTime DatumProdaje { get; set; }
         public int KolicinaProdatih { get; set; }
         public string KomentarPrMesta { get; set; }
+
+        public string NazivTabele => "DnevnaProdaja";
+
+        public string UbaciVrednosti => $"{ProdajnoMesto.ProdajnoMestoID}, '{KomentarPrMesta}', {KolicinaProdatih}, {DatumProdaje}, {Pakovanje.PakovanjeID}";
+
+        public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
+        {
+            DnevnaProdaja p = new DnevnaProdaja
+            {
+                DatumProdaje = (DateTime)reader["DatumProdaje"],
+                KolicinaProdatih = (int)reader["KolicinaProdatih"],
+                KomentarPrMesta = (string)reader["KomentarPrMesta"],
+                Pakovanje = new Pakovanje 
+                {
+                    PakovanjeID = (int)reader["PakovanjeID"]
+                },
+                ProdajnoMesto = new ProdajnoMesto
+                {
+                    ProdajnoMestoID = (int)reader["ProdajnoMestoID"]
+                }
+            };
+            return p;
+        }
     }
 }

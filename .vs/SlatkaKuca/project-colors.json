@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7b35fb6b-73af-4022-ad57-49da3558816d": {
+      "ProjectGuid": "7b35fb6b-73af-4022-ad57-49da3558816d",
+      "DisplayName": "ClientForms",
+      "ColorIndex": 0
+    },
+    "766ab29b-5068-4b56-b7ce-18bbf3e80b0d": {
+      "ProjectGuid": "766ab29b-5068-4b56-b7ce-18bbf3e80b0d",
+      "DisplayName": "Domain",
+      "ColorIndex": 1
+    },
+    "a85e5cb4-0947-4a3a-a41b-a104e457b43f": {
+      "ProjectGuid": "a85e5cb4-0947-4a3a-a41b-a104e457b43f",
+      "DisplayName": "Server.Main",
+      "ColorIndex": 2
+    },
+    "22dda15a-dfd9-486c-b6a6-259357a68958": {
+      "ProjectGuid": "22dda15a-dfd9-486c-b6a6-259357a68958",
+      "DisplayName": "Common",
+      "ColorIndex": 3
+    },
+    "1a9971da-b623-4a1a-9f39-2f13d0c6eab4": {
+      "ProjectGuid": "1a9971da-b623-4a1a-9f39-2f13d0c6eab4",
+      "DisplayName": "Server.AplikacionaLogika",
+      "ColorIndex": 4
+    },
+    "56d08cd8-a75f-4356-b28d-e64a015b5507": {
+      "ProjectGuid": "56d08cd8-a75f-4356-b28d-e64a015b5507",
+      "DisplayName": "Server.SistemskeOperacije",
+      "ColorIndex": 5
+    },
+    "63891992-d87c-4aad-96c7-7c54cd17653f": {
+      "ProjectGuid": "63891992-d87c-4aad-96c7-7c54cd17653f",
+      "DisplayName": "Server.Repozitorijum",
+      "ColorIndex": 6
+    },
+    "01f6e3c8-553e-4299-99dd-98c9a81a02d3": {
+      "ProjectGuid": "01f6e3c8-553e-4299-99dd-98c9a81a02d3",
+      "DisplayName": "Server.BrokerBaze",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}
