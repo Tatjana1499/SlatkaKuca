@@ -9,3 +9,16 @@ C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.M
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.CoreCompileInputs.cache
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.exe
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Common.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Domain.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.AplikacionaLogika.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.SistemskeOperacije.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.Repozitorijum.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.BrokerBaze.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Common.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Domain.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.AplikacionaLogika.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.SistemskeOperacije.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.Repozitorijum.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\bin\Debug\Server.BrokerBaze.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Main\obj\Debug\Server.Main.csproj.CopyComplete

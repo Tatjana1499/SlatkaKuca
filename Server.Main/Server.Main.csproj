@@ -81,5 +81,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{22DDA15A-DFD9-486C-B6A6-259357A68958}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{766AB29B-5068-4B56-B7CE-18BBF3E80B0D}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.AplikacionaLogika\Server.AplikacionaLogika.csproj">
+      <Project>{1A9971DA-B623-4A1A-9F39-2F13D0C6EAB4}</Project>
+      <Name>Server.AplikacionaLogika</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@ namespace Server.Repozitorijum
         {
             List<IDomenskiObjekat> result = new List<IDomenskiObjekat>();
             SqlCommand command = broker.CreateCommand();
-            command.CommandText = $"SELECT * FROM {obj.NazivTabele}";
+            command.CommandText = $"SELECT * FROM [{obj.NazivTabele}]";
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -45,7 +45,7 @@ namespace Server.Repozitorijum
         }
         public void OpenConnection()
         {
-            throw new NotImplementedException();
+            broker.OpenConnection();
         }
         public void Rollback()
         {

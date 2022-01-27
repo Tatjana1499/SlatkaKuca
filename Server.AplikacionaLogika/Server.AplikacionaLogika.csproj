@@ -44,5 +44,15 @@
     <Compile Include="Kontroler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{766AB29B-5068-4B56-B7CE-18BBF3E80B0D}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.SistemskeOperacije\Server.SistemskeOperacije.csproj">
+      <Project>{56D08CD8-A75F-4356-B28D-E64A015B5507}</Project>
+      <Name>Server.SistemskeOperacije</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

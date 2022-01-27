@@ -1,4 +1,6 @@
 ﻿using Common;
+using Domain;
+using Server.AplikacionaLogika;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,22 +14,25 @@ namespace Server.Main
 {
     public class ClientHandler
     {
-
+        Socket socket;
         CommunicationHelper helper;
         public ClientHandler(Socket socket)
         {
+            this.socket = socket;
             helper = new CommunicationHelper(socket);
         }
+
+        bool kraj = false;
 
         public void HandleRequest()
         {
             try
             {
-                while (true)
+                while (!kraj)
                 {
                     Zahtev request = helper.Receive<Zahtev>();
-                  //  Odgovor response = CreateResponse(request);
-                  //  helper.Send(response);
+                    Odgovor response = KreirajOdgovor(request);
+                    helper.Send(response);
                 }
             }
             catch (IOException ex)
@@ -36,11 +41,56 @@ namespace Server.Main
             }
             finally
             {
-               // CloseSocket();
+                CloseSocket();
             }
         }
 
+        public Odgovor KreirajOdgovor(Zahtev zahtev)
+        {
+            Odgovor odgovor = new Odgovor();
+            try
+            {
+                
+                    switch (zahtev.Operacija)
+                    {
+                        case Operacija.Prijava:
+                            odgovor.Poruka = Kontroler.Instanca.Login((User)zahtev.Poruka);
+                            if(odgovor.Poruka == null)
+                            {
+                                odgovor.Uspesnost = false;
+                                //poruka o gresci
+                            }
+                            break;
+
+                        case Operacija.Kraj:
+                            kraj = true;
+
+                            break;
+                    }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                odgovor.Uspesnost = false;
+            }
+            return odgovor;
+        }
 
 
+        private object lockobject = new object();
+        internal void CloseSocket()
+        {
+            lock (lockobject)
+            {
+                if (socket != null)
+                {
+                    kraj = true;
+                    socket.Shutdown(SocketShutdown.Both);
+                    socket.Close();
+                    socket = null;
+                   // OdjavljenKlijent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.AplikacionaLogika.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.AplikacionaLogika.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Domain.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.SistemskeOperacije.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.Repozitorijum.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.BrokerBaze.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Domain.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.SistemskeOperacije.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.Repozitorijum.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\bin\Debug\Server.BrokerBaze.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\obj\Debug\Server.AplikacionaLogika.csproj.AssemblyReference.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\obj\Debug\Server.AplikacionaLogika.csproj.CoreCompileInputs.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\obj\Debug\Server.AplikacionaLogika.csproj.CopyComplete
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\obj\Debug\Server.AplikacionaLogika.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.AplikacionaLogika\obj\Debug\Server.AplikacionaLogika.pdb

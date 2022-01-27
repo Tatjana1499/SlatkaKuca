@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace Domain
 {
     [Serializable]
-    public class User
+    public class User : IDomenskiObjekat
     {
         public int UserID { get; set; }
         public string KorisnickoIme { get; set; }
@@ -15,5 +16,23 @@ namespace Domain
         public string Email { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+
+        public string NazivTabele => "User";
+
+        public string UbaciVrednosti => $"{UserID}, '{KorisnickoIme}', '{KorisnickaSifra}', '{Email}', '{Ime}', '{Prezime}'";
+
+        public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
+        {
+            User u = new User
+            {
+             //   UserID = (int)reader["UserID"],
+                KorisnickoIme = (string)reader["KorisnickoIme"],
+                KorisnickaSifra = (string)reader["KorisnickaSifra"],
+                Ime = (string)reader["Ime"],
+                Email = (string)reader["Email"],
+                Prezime = (string)reader["Prezime"]
+            };
+            return u;
+        }
     }
 }

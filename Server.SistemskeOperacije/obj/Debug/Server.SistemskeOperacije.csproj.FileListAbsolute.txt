@@ -1,0 +1,13 @@
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.SistemskeOperacije.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.SistemskeOperacije.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Domain.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.Repozitorijum.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.BrokerBaze.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Domain.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.Repozitorijum.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\bin\Debug\Server.BrokerBaze.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.AssemblyReference.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.CoreCompileInputs.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.csproj.CopyComplete
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.SistemskeOperacije\obj\Debug\Server.SistemskeOperacije.pdb

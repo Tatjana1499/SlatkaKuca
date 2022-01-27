@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    [Serializable]
     public class Odgovor
     {
         public Operacija Operacija { get; set; }

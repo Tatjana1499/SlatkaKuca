@@ -1,0 +1,11 @@
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Server.Repozitorijum.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Server.Repozitorijum.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Domain.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Server.BrokerBaze.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Domain.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\bin\Debug\Server.BrokerBaze.pdb
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\obj\Debug\Server.Repozitorijum.csproj.AssemblyReference.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\obj\Debug\Server.Repozitorijum.csproj.CoreCompileInputs.cache
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\obj\Debug\Server.Repozitorijum.csproj.CopyComplete
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\obj\Debug\Server.Repozitorijum.dll
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\Server.Repozitorijum\obj\Debug\Server.Repozitorijum.pdb
