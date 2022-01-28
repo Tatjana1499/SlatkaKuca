@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientForms.GUIKontroler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace ClientForms.UserControls
 {
     public partial class UCDodajSlatkis : UserControl
     {
+        DodajSlatkisKontroler kontroler;
         public UCDodajSlatkis()
         {
             InitializeComponent();
+            kontroler = new DodajSlatkisKontroler(this);
+            kontroler.InitData();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            kontroler.DodajSlatkise();
         }
     }
 }

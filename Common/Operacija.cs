@@ -9,6 +9,9 @@ namespace Common
     public enum Operacija
     {
         Prijava,
-        Kraj
+        Kraj,
+        DodajProizvodjaca,
+        VratiProizvodjace,
+        DodajSlatkise
     }
 }

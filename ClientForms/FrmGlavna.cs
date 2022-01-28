@@ -1,11 +1,15 @@
-﻿using ClientForms.UserControls;
+﻿using ClientForms.GUIKontroler;
+using ClientForms.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,37 +17,52 @@ namespace ClientForms
 {
     public partial class FrmGlavna : Form
     {
+        GlavnaKontroler kontroler;
         public FrmGlavna()
         {
             InitializeComponent();
+            kontroler = new GlavnaKontroler();
+            Thread thread = new Thread(kontroler.PrimiPoruku);
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         private void kreirajToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCDodajProizvodjaca dodajProizvodjaca = new UCDodajProizvodjaca();
-            pnlGlavni.Controls.Clear();
-            pnlGlavni.Controls.Add(dodajProizvodjaca);
+            PromeniPanel(new UCDodajProizvodjaca());
         }
 
         private void kreirajToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UCDodajSlatkis dodajSlatkis = new UCDodajSlatkis();
-            pnlGlavni.Controls.Clear();
-            pnlGlavni.Controls.Add(dodajSlatkis);
+            PromeniPanel(new UCDodajSlatkis());
         }
 
         private void pretragaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCPretragaSlatkisa pretragaSlatkisa = new UCPretragaSlatkisa();
-            pnlGlavni.Controls.Clear();
-            pnlGlavni.Controls.Add(pretragaSlatkisa);
+            PromeniPanel(new UCPretragaSlatkisa());
         }
 
         private void brisanjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCObrisiSlatkis obrisiSlatkis = new UCObrisiSlatkis();
+            PromeniPanel(new UCObrisiSlatkis());
+        }
+
+        private void PromeniPanel(UserControl userControl)
+        {
             pnlGlavni.Controls.Clear();
-            pnlGlavni.Controls.Add(obrisiSlatkis);
+            pnlGlavni.Controls.Add(userControl);
+        }
+
+        private void FrmGlavna_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Communication.Instanca.Close();
+            }
+            catch (IOException ex)
+            {
+                Debug.WriteLine(">>>>> FormClosed event >>>>>" + ex.Message);
+            }
         }
     }
 }

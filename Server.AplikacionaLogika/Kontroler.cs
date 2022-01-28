@@ -21,12 +21,6 @@ namespace Server.AplikacionaLogika
         }
         private Kontroler() { }
 
-
-        public List<Slatkis> GetAllProducts()
-        {
-            return new List<Slatkis>();
-        }
-
         public User Login(User user)
         {
             OpstaSO so = new PrijavaSO(user);
@@ -34,12 +28,17 @@ namespace Server.AplikacionaLogika
             return ((PrijavaSO)so).User;
         }
 
-        public string[] GetAllMeasurementUnits()
+        public void DodajSlatkise(Object poruka)
         {
-            //SystemOperationBase so = new GetAllMeasurementUnits(user);
-            //so.ExecuteTemplate();
-            //return ((GetAllMeasurementUnits)so).Result;
-            return new string[] { }; //treba implementirati sistemsku operaciju
+            OpstaSO so = new DodajSlatkiseSO(poruka);
+            so.ExecuteTemplate();
+        }
+
+        public List<Proizvodjac> VratiProizvodjace()
+        {
+            OpstaSO so = new VratiProizvodjaceSO();
+            so.ExecuteTemplate();
+            return ((VratiProizvodjaceSO)so).proizvodjaci;
         }
         /*
         public void SaveInvoice(Invoice i)
@@ -63,6 +62,11 @@ namespace Server.AplikacionaLogika
         {
         }
         */
-
+        public Proizvodjac DodajProizvodjaca(Proizvodjac proizvodjac)
+        {
+            DodajProizvodjacaSO so = new DodajProizvodjacaSO(proizvodjac);
+            so.ExecuteTemplate();
+            return so.Proizvodjac;
+        }
     }
 }

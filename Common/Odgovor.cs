@@ -9,8 +9,9 @@ namespace Common
     [Serializable]
     public class Odgovor
     {
-        public Operacija Operacija { get; set; }
+        public string Greska { get; set; }
         public bool Uspesnost { get; set; } = true;
         public Object Poruka { get; set; }
+        public Operacija Operacija { get; set; }
     }
 }

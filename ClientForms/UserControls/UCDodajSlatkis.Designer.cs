@@ -1,4 +1,6 @@
-﻿namespace ClientForms.UserControls
+﻿using System.Windows.Forms;
+
+namespace ClientForms.UserControls
 {
     partial class UCDodajSlatkis
     {
@@ -28,22 +30,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDodajSlatkis = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIzbrisiRed = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDodajSlatkis)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDodajSlatkis
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(708, 292);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDodajSlatkis.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvDodajSlatkis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDodajSlatkis.Location = new System.Drawing.Point(54, 51);
+            this.dgvDodajSlatkis.Name = "dgvDodajSlatkis";
+            this.dgvDodajSlatkis.RowHeadersWidth = 51;
+            this.dgvDodajSlatkis.RowTemplate.Height = 24;
+            this.dgvDodajSlatkis.Size = new System.Drawing.Size(708, 292);
+            this.dgvDodajSlatkis.TabIndex = 0;
             // 
             // btnDodaj
             // 
@@ -55,6 +57,7 @@
             this.btnDodaj.TabIndex = 1;
             this.btnDodaj.Text = "Dodaj sve";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnIzbrisiRed
             // 
@@ -73,18 +76,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnIzbrisiRed);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDodajSlatkis);
             this.Name = "UCDodajSlatkis";
             this.Size = new System.Drawing.Size(842, 466);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDodajSlatkis)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDodajSlatkis;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnIzbrisiRed;
+
+        public DataGridView DgvDodajSlatkis { get => dgvDodajSlatkis; set => dgvDodajSlatkis = value; }
+        public Button BtnDodaj { get => btnDodaj; set => btnDodaj = value; }
+        public Button BtnIzbrisiRed { get => btnIzbrisiRed; set => btnIzbrisiRed = value; }
     }
 }

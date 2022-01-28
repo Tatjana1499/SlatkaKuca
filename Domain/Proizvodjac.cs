@@ -15,16 +15,16 @@ namespace Domain
         public string Email { get; set; }
         public string Telefon { get; set; }
         public string Mesto { get; set; }
-
+        public Proizvodjac Self { get { return this; } }
         public string NazivTabele => "Proizvodjac";
      
-        public string UbaciVrednosti => $"{ProizvodjacID}, '{Naziv}', '{Email}', '{Telefon}', '{Mesto}'";
+        public string UbaciVrednosti => $"'{Naziv}', '{Email}', '{Telefon}', '{Mesto}'";
 
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             Proizvodjac p = new Proizvodjac
             {
-                ProizvodjacID = (int)reader["ProizvodjacID"],
+                ProizvodjacID = (int)reader["Id"],
                 Naziv = (string)reader["Naziv"],
                 Email = (string)reader["Email"],
                 Telefon = (string)reader["Telefon"],

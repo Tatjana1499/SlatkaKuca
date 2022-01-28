@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientForms.GUIKontroler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace ClientForms.UserControls
 {
     public partial class UCDodajProizvodjaca : UserControl
     {
+        DodajProizvodjacaKontroler kontroler;
         public UCDodajProizvodjaca()
         {
             InitializeComponent();
+            kontroler = new DodajProizvodjacaKontroler(this);
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            kontroler.DodajProizvodjaca();
         }
     }
 }

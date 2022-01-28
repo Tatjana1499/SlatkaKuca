@@ -69,7 +69,7 @@
             // kreirajToolStripMenuItem
             // 
             this.kreirajToolStripMenuItem.Name = "kreirajToolStripMenuItem";
-            this.kreirajToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.kreirajToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.kreirajToolStripMenuItem.Text = "Kreiraj";
             this.kreirajToolStripMenuItem.Click += new System.EventHandler(this.kreirajToolStripMenuItem_Click);
             // 
@@ -87,14 +87,14 @@
             // kreirajToolStripMenuItem1
             // 
             this.kreirajToolStripMenuItem1.Name = "kreirajToolStripMenuItem1";
-            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
             this.kreirajToolStripMenuItem1.Text = "Kreiraj novi";
             this.kreirajToolStripMenuItem1.Click += new System.EventHandler(this.kreirajToolStripMenuItem1_Click);
             // 
             // pretragaToolStripMenuItem
             // 
             this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.pretragaToolStripMenuItem.Text = "Pretraga";
             this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.pretragaToolStripMenuItem_Click);
             // 
@@ -107,7 +107,7 @@
             // brisanjeToolStripMenuItem
             // 
             this.brisanjeToolStripMenuItem.Name = "brisanjeToolStripMenuItem";
-            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.brisanjeToolStripMenuItem.Text = "Brisanje";
             this.brisanjeToolStripMenuItem.Click += new System.EventHandler(this.brisanjeToolStripMenuItem_Click);
             // 
@@ -157,6 +157,7 @@
             this.MainMenuStrip = this.meniGlavni;
             this.Name = "FrmGlavna";
             this.Text = "FrmGlavna";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGlavna_FormClosed);
             this.meniGlavni.ResumeLayout(false);
             this.meniGlavni.PerformLayout();
             this.ResumeLayout(false);

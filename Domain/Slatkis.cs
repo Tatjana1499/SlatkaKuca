@@ -14,13 +14,13 @@ namespace Domain
         public string Naziv { get; set; }
         public Proizvodjac Proizvodjac { get; set; }
         public string NazivTabele => "Slatkis";
-        public string UbaciVrednosti => $"{SlatkisID}, '{Naziv}', {Proizvodjac.ProizvodjacID}";
+        public string UbaciVrednosti => $"'{Naziv}', {Proizvodjac.ProizvodjacID}";
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             Slatkis s = new Slatkis
             {
                 Naziv = (string)reader["Naziv"],
-                SlatkisID = (int)reader["SlatkisID"],
+                SlatkisID = (int)reader["Id"],
                 Proizvodjac = new Proizvodjac 
                 { 
                     ProizvodjacID = (int)reader["ProizvodjacID"]

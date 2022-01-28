@@ -12,20 +12,26 @@ namespace ClientForms.GUIKontroler
 {
     public class PrijavaKontroler
     {
-        internal void Prijava(FrmPrijava frmPrijava)
+        public void Prijava(FrmPrijava frmPrijava)
         {
             if (!Validacija(frmPrijava)) return;
             try
             {
-                User user = new User
+                Zahtev zahtev = new Zahtev()
                 {
-                    KorisnickoIme = frmPrijava.TxtKorIme.Text,
-                    KorisnickaSifra = frmPrijava.TxtSifra.Text
+                    Operacija = Operacija.Prijava,
+                    Poruka = new User
+                    {
+                        KorisnickoIme = frmPrijava.TxtKorIme.Text,
+                        KorisnickaSifra = frmPrijava.TxtSifra.Text
+                    }
                 };
 
                 Communication.Instanca.Connect();
+                Communication.Instanca.SendRequest(zahtev);
+                Odgovor odgovor = Communication.Instanca.GetResult<Odgovor>();
+                Sesija.Instanca.User = (User)odgovor.Poruka;
 
-                Sesija.Instanca.User = Communication.Instanca.SendRequestGetResult<User>(Operacija.Prijava, user);
                 if (Sesija.Instanca.User != null)
                 {
                     MessageBox.Show($"Uspešna prijava, {Sesija.Instanca.User.Ime} {Sesija.Instanca.User.Prezime}!");
@@ -33,7 +39,7 @@ namespace ClientForms.GUIKontroler
                 }
                 else
                 {
-                    MessageBox.Show("Koeisnik ne postoji!");
+                    MessageBox.Show("Korisnik ne postoji!");
                 }
             }
             catch (Exception ex)

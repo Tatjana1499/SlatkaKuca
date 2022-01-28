@@ -51,8 +51,8 @@ namespace Server.Main
             try
             {
                 
-                    switch (zahtev.Operacija)
-                    {
+                switch (zahtev.Operacija)
+                {
                         case Operacija.Prijava:
                             odgovor.Poruka = Kontroler.Instanca.Login((User)zahtev.Poruka);
                             if(odgovor.Poruka == null)
@@ -65,8 +65,32 @@ namespace Server.Main
                         case Operacija.Kraj:
                             kraj = true;
 
-                            break;
-                    }
+                        break;
+                    case Operacija.DodajProizvodjaca:
+                        odgovor.Poruka = Kontroler.Instanca.DodajProizvodjaca((Proizvodjac)zahtev.Poruka);
+                        odgovor.Operacija = Operacija.DodajProizvodjaca;
+                        if (odgovor.Poruka == null)
+                        {
+                            odgovor.Uspesnost = false;
+                            //poruka o gresci
+                        }
+                        break;
+                    case Operacija.VratiProizvodjace:
+                        odgovor.Poruka = Kontroler.Instanca.VratiProizvodjace();
+                        odgovor.Operacija = Operacija.VratiProizvodjace;
+                        if (odgovor.Poruka == null)
+                        {
+                            odgovor.Uspesnost = false;
+                            //poruka o gresci
+                        }
+                        break;
+                    case Operacija.DodajSlatkise:
+                        odgovor.Poruka = zahtev.Poruka;
+                        odgovor.Uspesnost = true;
+                        odgovor.Operacija = Operacija.DodajSlatkise;
+                        Kontroler.Instanca.DodajSlatkise(zahtev.Poruka);
+                        break;
+                }
             }
             catch(Exception ex)
             {

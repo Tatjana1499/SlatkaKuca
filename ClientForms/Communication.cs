@@ -23,6 +23,7 @@ namespace ClientForms
         private Communication() { }
 
         Socket socket;
+
         CommunicationHelper helper;
         public void Connect()
         {
@@ -33,52 +34,25 @@ namespace ClientForms
                 helper = new CommunicationHelper(socket);
             }
         }
-        public Output SendRequestGetResult<Output>(Operacija op, object i = null) where Output : class
+    
+        public T GetResult<T>() where T : class
         {
-            SendRequest(op, i);
-            return GetResult<Output>();
-        }
-        public void SendRequestNoResult(Operacija op, object i)
-        {
-            SendRequest(op, i);
-            GetResult();
-        }
-        private T GetResult<T>() where T : class
-        {
-            Odgovor response = helper.Receive<Odgovor>();
-            if (response.Uspesnost)
+            T response = helper.Receive<T>();
+            if (response is Odgovor o && !o.Uspesnost)
             {
-                return (T)response.Poruka;
+                return null;//OBRADI
             }
             else
             {
-                throw new Exception();
+                return (T)response;
             }
         }
-        private void GetResult()
+
+        public void SendRequest<T>(T obj) where T : class
         {
-            Odgovor response = helper.Receive<Odgovor>();
-            if (!response.Uspesnost)
-            {
-                throw new Exception();
-            }
+            helper.Send(obj);
         }
-        private void SendRequest(Operacija operation, object requestObject = null)
-        {
-            try
-            {
-                Zahtev r = new Zahtev
-                {
-                    Operacija = operation,
-                    Poruka = requestObject
-                };
-                helper.Send(r);
-            }
-            catch (IOException ex)
-            {
-                throw new IOException(ex.Message);
-            }
-        }
+
         public void Close()
         {
             if (socket == null) return;

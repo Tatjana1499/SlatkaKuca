@@ -59,6 +59,9 @@
     <Compile Include="FrmPrijava.Designer.cs">
       <DependentUpon>FrmPrijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIKontroler\DodajProizvodjacaKontroler.cs" />
+    <Compile Include="GUIKontroler\DodajSlatkisKontroler.cs" />
+    <Compile Include="GUIKontroler\GlavnaKontroler.cs" />
     <Compile Include="GUIKontroler\PrijavaKontroler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,6 @@
-﻿namespace ClientForms.UserControls
+﻿using System.Windows.Forms;
+
+namespace ClientForms.UserControls
 {
     partial class UCDodajProizvodjaca
     {
@@ -129,6 +131,7 @@
             this.btnDodaj.TabIndex = 8;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // UCDodajProizvodjaca
             // 
@@ -161,5 +164,15 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtMesto;
         private System.Windows.Forms.Button btnDodaj;
+
+        public Label LblNaziv { get => lblNaziv; set => lblNaziv = value; }
+        public Label LblTelefon { get => lblTelefon; set => lblTelefon = value; }
+        public Label LblEmail { get => lblEmail; set => lblEmail = value; }
+        public Label LblMesto { get => lblMesto; set => lblMesto = value; }
+        public TextBox TxtNaziv { get => txtNaziv; set => txtNaziv = value; }
+        public TextBox TxtTelefon { get => txtTelefon; set => txtTelefon = value; }
+        public TextBox TxtEmail { get => txtEmail; set => txtEmail = value; }
+        public TextBox TxtMesto { get => txtMesto; set => txtMesto = value; }
+        public Button BtnDodaj { get => btnDodaj; set => btnDodaj = value; }
     }
 }
