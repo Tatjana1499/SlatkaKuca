@@ -15,6 +15,7 @@ namespace Common
         DodajSlatkise,
         VratiSlatkise,
         VratiOdabraneSlatkise,
-        ObrisiSlatkis
+        ObrisiSlatkis,
+        DodajPrMesto
     }
 }

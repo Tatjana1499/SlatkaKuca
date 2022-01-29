@@ -39,6 +39,8 @@ namespace ClientForms.GUIKontroler
             this.uc.DgvDodajSlatkis.Columns["Proizvodjac"].Visible = false;
             this.uc.DgvDodajSlatkis.Columns["NazivTabele"].Visible = false;
             this.uc.DgvDodajSlatkis.Columns["UbaciVrednosti"].Visible = false;
+            this.uc.DgvDodajSlatkis.Columns["UslovIzbacivanja"].Visible = false;
+
 
             DataGridViewComboBoxColumn proizvodjacCmb = new DataGridViewComboBoxColumn()
             {

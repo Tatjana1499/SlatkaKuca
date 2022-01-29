@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajPrMestoSO.cs" />
     <Compile Include="DodajProizvodjacaSO.cs" />
     <Compile Include="DodajSlatkiseSO.cs" />
     <Compile Include="ObrisiSlatkisSO.cs" />

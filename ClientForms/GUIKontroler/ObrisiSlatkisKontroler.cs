@@ -57,6 +57,8 @@ namespace ClientForms.GUIKontroler
             this.uc.DgvNadjeniSlatkisi.DataSource = slatkisi;
             this.uc.DgvNadjeniSlatkisi.Columns["NazivTabele"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["UbaciVrednosti"].Visible = false;
+            this.uc.DgvNadjeniSlatkisi.Columns["UslovIzbacivanja"].Visible = false;
+
         }
         public void ObrisiOdabrani()
         {

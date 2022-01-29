@@ -85,7 +85,7 @@ namespace Server.Main
                         }
                         break;
                     case Operacija.DodajSlatkise:
-                        odgovor.Poruka = zahtev.Poruka;
+                      //  odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.DodajSlatkise;
                         Kontroler.Instanca.DodajSlatkise(zahtev.Poruka);
                         break;
@@ -105,6 +105,11 @@ namespace Server.Main
                         {
                             odgovor.Greska = "Slatkis nije obrisan.";
                         }
+                        break;
+                    case Operacija.DodajPrMesto:
+                       // odgovor.Poruka = zahtev.Poruka;
+                        odgovor.Operacija = Operacija.DodajPrMesto;
+                        Kontroler.Instanca.DodajPrMesto((ProdajnoMesto)zahtev.Poruka);
                         break;
                 }
             }

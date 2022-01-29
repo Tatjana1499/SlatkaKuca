@@ -60,6 +60,8 @@ namespace ClientForms.GUIKontroler
             this.uc.DgvNadjeniSlatkisi.Columns["UbaciVrednosti"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["SlatkisID"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["Proizvodjac"].Visible = false;
+            this.uc.DgvNadjeniSlatkisi.Columns["UslovIzbacivanja"].Visible = false;
+
         }
         public void DetaljiOdabranog()
         {

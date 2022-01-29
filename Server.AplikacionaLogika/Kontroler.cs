@@ -113,5 +113,12 @@ namespace Server.AplikacionaLogika
             so.ExecuteTemplate();
             return so.Proizvodjac;
         }
+
+        public void DodajPrMesto(ProdajnoMesto prodajnoMesto)
+        {
+            OpstaSO so = new DodajPrMestoSO(prodajnoMesto);
+            so.ExecuteTemplate();
+            
+        }
     }
 }

@@ -80,6 +80,15 @@ namespace ClientForms.GUIKontroler
                             MessageBox.Show("Slatkiš nije obrisan.");
 
                             break;
+                        case Operacija.DodajPrMesto:
+                            if (odgovor.Uspesnost == false)
+                            {
+                                MessageBox.Show("Prodajno mesto nije dodato.");
+                                continue;
+                            }
+                            MessageBox.Show("Uspesno dodato prodajno mesto.");
+                            break;
+
                     }
                 }
             }

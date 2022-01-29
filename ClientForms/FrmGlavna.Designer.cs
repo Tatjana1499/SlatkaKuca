@@ -122,8 +122,9 @@
             // kreirajToolStripMenuItem2
             // 
             this.kreirajToolStripMenuItem2.Name = "kreirajToolStripMenuItem2";
-            this.kreirajToolStripMenuItem2.Size = new System.Drawing.Size(135, 26);
+            this.kreirajToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.kreirajToolStripMenuItem2.Text = "Kreiraj";
+            this.kreirajToolStripMenuItem2.Click += new System.EventHandler(this.kreirajToolStripMenuItem2_Click);
             // 
             // dnevnaProdajaToolStripMenuItem
             // 

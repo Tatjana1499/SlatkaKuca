@@ -17,7 +17,7 @@ namespace Domain
         public string Sajt { get; set; }
 
         public string NazivTabele => "ProdajnoMesto";
-        public string UbaciVrednosti => $"{ProdajnoMestoID}, '{Naziv}', '{Lokacija}', '{RadnoVreme}', '{Sajt}'";
+        public string UbaciVrednosti => $"'{Naziv}', '{Lokacija}', '{RadnoVreme}', '{Sajt}'";
 
         public string UslovIzbacivanja => $"{ProdajnoMestoID} = Id";
 
@@ -25,7 +25,7 @@ namespace Domain
         {
             ProdajnoMesto p = new ProdajnoMesto
             {
-                ProdajnoMestoID = (int)reader["ProdajnoMestoID"],
+                ProdajnoMestoID = (int)reader["Id"],
                 Naziv = (string)reader["Naziv"],
                 Lokacija = (string)reader["Lokacija"],
                 RadnoVreme = (string)reader["RadnoVreme"],
