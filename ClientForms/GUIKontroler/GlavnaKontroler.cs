@@ -88,7 +88,14 @@ namespace ClientForms.GUIKontroler
                             }
                             MessageBox.Show("Uspesno dodato prodajno mesto.");
                             break;
-
+                        case Operacija.IzmeniSlatkis:
+                            if (odgovor.Uspesnost == false)
+                            {
+                                MessageBox.Show("Slatkiš nije izmenjen.");
+                                continue;
+                            }
+                            MessageBox.Show("Uspesno izmenjen slatkiš.");
+                            break;
                     }
                 }
             }

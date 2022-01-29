@@ -44,6 +44,7 @@
     <Compile Include="DodajPrMestoSO.cs" />
     <Compile Include="DodajProizvodjacaSO.cs" />
     <Compile Include="DodajSlatkiseSO.cs" />
+    <Compile Include="IzmeniSlatkisSO.cs" />
     <Compile Include="ObrisiSlatkisSO.cs" />
     <Compile Include="OpstaSO.cs" />
     <Compile Include="PrijavaSO.cs" />

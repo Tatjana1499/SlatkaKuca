@@ -19,9 +19,11 @@ namespace Domain
 
         public string NazivTabele => "User";
 
-        public string UbaciVrednosti => $"{UserID}, '{KorisnickoIme}', '{KorisnickaSifra}', '{Email}', '{Ime}', '{Prezime}'";
+        public string UbaciVrednosti => $"'{KorisnickoIme}', '{KorisnickaSifra}', '{Email}', '{Ime}', '{Prezime}'";
 
         public string UslovIzbacivanja => $"{UserID} = Id";
+
+        public string PostaviVrednosti => $"KorisnickoIme = '{KorisnickoIme}', KorisnickaSifra = '{KorisnickaSifra}', Email = '{Email}', Ime = '{Ime}', Prezime = '{Prezime}'";
 
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {

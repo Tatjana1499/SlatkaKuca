@@ -18,6 +18,7 @@ namespace Domain
 
         public string NazivTabele => "ProdajnoMesto";
         public string UbaciVrednosti => $"'{Naziv}', '{Lokacija}', '{RadnoVreme}', '{Sajt}'";
+        public string PostaviVrednosti => $"Naziv = '{Naziv}', Lokacija = '{Lokacija}', RadnoVreme = '{RadnoVreme}', Sajt = '{Sajt}'";
 
         public string UslovIzbacivanja => $"{ProdajnoMestoID} = Id";
 

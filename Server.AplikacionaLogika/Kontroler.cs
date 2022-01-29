@@ -85,28 +85,11 @@ namespace Server.AplikacionaLogika
             return ((ObrisiSlatkisSO)so).uspesno;
         }
 
-        /*
-        public void SaveInvoice(Invoice i)
+        public void IzmeniSlatkis(Slatkis slatkis)
         {
-        }
-
-        public List<Manufacturer> GetAllManufacturers()
-        {
-            SystemOperationBase so = new GetAllManufacturersSO();
-            so.ExecuteTemplate();
-            return ((GetAllManufacturersSO)so).Result;
-        }
-
-        public void AddProduct(Product product)
-        {
-            SystemOperationBase so = new AddProductSO(product);
+            IzmeniSlatkisSO so = new IzmeniSlatkisSO(slatkis);
             so.ExecuteTemplate();
         }
-
-        public void AddAllProducts(List<Product> products)
-        {
-        }
-        */
         public Proizvodjac DodajProizvodjaca(Proizvodjac proizvodjac)
         {
             DodajProizvodjacaSO so = new DodajProizvodjacaSO(proizvodjac);

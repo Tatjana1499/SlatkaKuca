@@ -17,7 +17,7 @@ namespace Domain
         public string Mesto { get; set; }
         public Proizvodjac Self { get { return this; } }
         public string NazivTabele => "Proizvodjac";
-     
+        public string PostaviVrednosti => $"Naziv = '{Naziv}', Email = '{Email}', Telefon = '{Telefon}', Mesto = '{Mesto}'";
         public string UbaciVrednosti => $"'{Naziv}', '{Email}', '{Telefon}', '{Mesto}'";
 
         public string UslovIzbacivanja => $"{ProizvodjacID} = Id";

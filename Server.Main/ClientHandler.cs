@@ -111,6 +111,10 @@ namespace Server.Main
                         odgovor.Operacija = Operacija.DodajPrMesto;
                         Kontroler.Instanca.DodajPrMesto((ProdajnoMesto)zahtev.Poruka);
                         break;
+                    case Operacija.IzmeniSlatkis:
+                        odgovor.Operacija = Operacija.IzmeniSlatkis;
+                        Kontroler.Instanca.IzmeniSlatkis((Slatkis)zahtev.Poruka);
+                        break;
                 }
             }
             catch(Exception ex)

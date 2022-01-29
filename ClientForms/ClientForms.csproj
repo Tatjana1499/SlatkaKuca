@@ -63,6 +63,7 @@
     <Compile Include="GUIKontroler\DodajProizvodjacaKontroler.cs" />
     <Compile Include="GUIKontroler\DodajSlatkisKontroler.cs" />
     <Compile Include="GUIKontroler\GlavnaKontroler.cs" />
+    <Compile Include="GUIKontroler\IzmeniSlatkisKontroler.cs" />
     <Compile Include="GUIKontroler\ObrisiSlatkisKontroler.cs" />
     <Compile Include="GUIKontroler\PretragaSlatkisaKontroler.cs" />
     <Compile Include="GUIKontroler\PrijavaKontroler.cs" />
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="UserControls\UCDodajSlatkis.Designer.cs">
       <DependentUpon>UCDodajSlatkis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCIzmeniSlatkis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCIzmeniSlatkis.Designer.cs">
+      <DependentUpon>UCIzmeniSlatkis.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCObrisiSlatkis.cs">
       <SubType>UserControl</SubType>
@@ -122,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDodajSlatkis.resx">
       <DependentUpon>UCDodajSlatkis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCIzmeniSlatkis.resx">
+      <DependentUpon>UCIzmeniSlatkis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCObrisiSlatkis.resx">
       <DependentUpon>UCObrisiSlatkis.cs</DependentUpon>

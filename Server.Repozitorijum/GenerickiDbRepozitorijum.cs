@@ -65,7 +65,10 @@ namespace Server.Repozitorijum
         }
         public void Update(IDomenskiObjekat obj)
         {
-            throw new NotImplementedException();
+            SqlCommand command = broker.CreateCommand();
+            command.CommandText = $"UPDATE {obj.NazivTabele} SET {obj.PostaviVrednosti} WHERE {obj.UslovIzbacivanja}";
+            command.ExecuteNonQuery();
+            
         }
     }
 }

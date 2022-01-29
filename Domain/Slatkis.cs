@@ -15,7 +15,7 @@ namespace Domain
         public Proizvodjac Proizvodjac { get; set; }
         public string NazivTabele => "Slatkis";
         public string UbaciVrednosti => $"'{Naziv}', {Proizvodjac.ProizvodjacID}";
-
+        public string PostaviVrednosti => $"Naziv = '{Naziv}', ProizvodjacID = {Proizvodjac.ProizvodjacID}";
         public string UslovIzbacivanja => $"{SlatkisID} = Id";
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {

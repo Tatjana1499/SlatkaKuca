@@ -87,27 +87,28 @@
             // kreirajToolStripMenuItem1
             // 
             this.kreirajToolStripMenuItem1.Name = "kreirajToolStripMenuItem1";
-            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.kreirajToolStripMenuItem1.Text = "Kreiraj novi";
             this.kreirajToolStripMenuItem1.Click += new System.EventHandler(this.kreirajToolStripMenuItem1_Click);
             // 
             // pretragaToolStripMenuItem
             // 
             this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pretragaToolStripMenuItem.Text = "Pretraga";
             this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.pretragaToolStripMenuItem_Click);
             // 
             // izmenaToolStripMenuItem
             // 
             this.izmenaToolStripMenuItem.Name = "izmenaToolStripMenuItem";
-            this.izmenaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.izmenaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.izmenaToolStripMenuItem.Text = "Izmena";
+            this.izmenaToolStripMenuItem.Click += new System.EventHandler(this.izmenaToolStripMenuItem_Click);
             // 
             // brisanjeToolStripMenuItem
             // 
             this.brisanjeToolStripMenuItem.Name = "brisanjeToolStripMenuItem";
-            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.brisanjeToolStripMenuItem.Text = "Brisanje";
             this.brisanjeToolStripMenuItem.Click += new System.EventHandler(this.brisanjeToolStripMenuItem_Click);
             // 
@@ -122,7 +123,7 @@
             // kreirajToolStripMenuItem2
             // 
             this.kreirajToolStripMenuItem2.Name = "kreirajToolStripMenuItem2";
-            this.kreirajToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.kreirajToolStripMenuItem2.Size = new System.Drawing.Size(135, 26);
             this.kreirajToolStripMenuItem2.Text = "Kreiraj";
             this.kreirajToolStripMenuItem2.Click += new System.EventHandler(this.kreirajToolStripMenuItem2_Click);
             // 

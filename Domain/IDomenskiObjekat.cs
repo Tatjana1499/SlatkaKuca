@@ -12,7 +12,7 @@ namespace Domain
         string NazivTabele { get; }
         string UbaciVrednosti { get; }
         string UslovIzbacivanja { get; }
-
+        string PostaviVrednosti { get; }
         IDomenskiObjekat ProcitajObjekat(SqlDataReader result);
     }
 }

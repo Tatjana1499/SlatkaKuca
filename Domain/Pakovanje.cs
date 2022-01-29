@@ -21,8 +21,9 @@ namespace Domain
         public Slatkis Slatkis { get; set; }
 
         public string NazivTabele => "Pakovanje";
+        public string PostaviVrednosti => $"Naziv = '{Naziv}', Kolicina = {Kolicina}, EnergetskaVrednost = {EnergetskaVrednost}, Vlakna = {Vlakna}, Secer = {Secer}, UgljeniHidrati = {UgljeniHidrati}, Proteini = {Proteini}, SlatkisID = {Slatkis.SlatkisID}";
 
-        public string UbaciVrednosti => $"{PakovanjeID}, '{Naziv}', {Kolicina}, {EnergetskaVrednost}, {Vlakna}, {Secer}, {UgljeniHidrati}, {Proteini}, {Slatkis.SlatkisID}";
+        public string UbaciVrednosti => $"'{Naziv}', {Kolicina}, {EnergetskaVrednost}, {Vlakna}, {Secer}, {UgljeniHidrati}, {Proteini}, {Slatkis.SlatkisID}";
 
         public string UslovIzbacivanja => $"{PakovanjeID} = Id";
 
