@@ -20,6 +20,8 @@ namespace Domain
      
         public string UbaciVrednosti => $"'{Naziv}', '{Email}', '{Telefon}', '{Mesto}'";
 
+        public string UslovIzbacivanja => $"{ProizvodjacID} = Id";
+
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             Proizvodjac p = new Proizvodjac

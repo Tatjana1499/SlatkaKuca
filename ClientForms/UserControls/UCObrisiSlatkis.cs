@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientForms.GUIKontroler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace ClientForms.UserControls
 {
     public partial class UCObrisiSlatkis : UserControl
     {
+        ObrisiSlatkisKontroler kontroler;
         public UCObrisiSlatkis()
         {
             InitializeComponent();
+            kontroler = new ObrisiSlatkisKontroler(this);
+            kontroler.InitData();
+
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            kontroler.PretraziSlatkise();
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            kontroler.ObrisiOdabrani();
         }
     }
 }

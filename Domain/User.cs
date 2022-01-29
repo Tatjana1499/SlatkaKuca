@@ -21,6 +21,8 @@ namespace Domain
 
         public string UbaciVrednosti => $"{UserID}, '{KorisnickoIme}', '{KorisnickaSifra}', '{Email}', '{Ime}', '{Prezime}'";
 
+        public string UslovIzbacivanja => $"{UserID} = Id";
+
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             User u = new User

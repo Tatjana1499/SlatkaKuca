@@ -20,6 +20,8 @@ namespace Domain
 
         public string UbaciVrednosti => $"{ProdajnoMesto.ProdajnoMestoID}, '{KomentarPrMesta}', {KolicinaProdatih}, {DatumProdaje}, {Pakovanje.PakovanjeID}";
 
+        public string UslovIzbacivanja => $"{DatumProdaje} = Id"; //SREDI!!!!!!!
+
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             DnevnaProdaja p = new DnevnaProdaja

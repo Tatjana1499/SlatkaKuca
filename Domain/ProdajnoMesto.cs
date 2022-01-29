@@ -18,6 +18,9 @@ namespace Domain
 
         public string NazivTabele => "ProdajnoMesto";
         public string UbaciVrednosti => $"{ProdajnoMestoID}, '{Naziv}', '{Lokacija}', '{RadnoVreme}', '{Sajt}'";
+
+        public string UslovIzbacivanja => $"{ProdajnoMestoID} = Id";
+
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             ProdajnoMesto p = new ProdajnoMesto

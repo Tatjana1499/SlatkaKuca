@@ -62,6 +62,8 @@
     <Compile Include="GUIKontroler\DodajProizvodjacaKontroler.cs" />
     <Compile Include="GUIKontroler\DodajSlatkisKontroler.cs" />
     <Compile Include="GUIKontroler\GlavnaKontroler.cs" />
+    <Compile Include="GUIKontroler\ObrisiSlatkisKontroler.cs" />
+    <Compile Include="GUIKontroler\PretragaSlatkisaKontroler.cs" />
     <Compile Include="GUIKontroler\PrijavaKontroler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

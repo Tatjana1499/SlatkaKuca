@@ -14,15 +14,17 @@ namespace ClientForms.GUIKontroler
     {
         
         public static List<Proizvodjac> proizvodjaci;
+        public static List<Slatkis> odabraniSlatkisi;
+
         public GlavnaKontroler()
         {
             //PRIMI FORMU
         }
         public void PrimiPoruku()
         {
+            Odgovor odgovor = new Odgovor();
             try
             {
-                Odgovor odgovor;
                 while (true)
                 {
                     Object obj = Communication.Instanca.GetResult<Object>();
@@ -59,14 +61,31 @@ namespace ClientForms.GUIKontroler
                             proizvodjaci = (List<Proizvodjac>)odgovor.Poruka;
                             break;
                         case Operacija.DodajSlatkise:
+                            if(odgovor.Uspesnost == false)
+                            {
+                            MessageBox.Show("Slatkisi nisu dodati.");
+                                continue;
+                            }
                             MessageBox.Show("Uspesno dodati slatkisi.");
+                            break;
+                        case Operacija.VratiOdabraneSlatkise:
+                            odabraniSlatkisi = (List<Slatkis>)odgovor.Poruka;
+                            break;
+                        case Operacija.ObrisiSlatkis:
+                            if (odgovor.Uspesnost)
+                            {
+                                MessageBox.Show("Uspešno obrisan slatkiš.");
+                                continue;
+                            }
+                            MessageBox.Show("Slatkiš nije obrisan.");
+
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                //OBRADI
+                MessageBox.Show(odgovor.Greska);
             }
 
 

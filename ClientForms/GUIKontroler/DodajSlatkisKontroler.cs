@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,10 +25,11 @@ namespace ClientForms.GUIKontroler
                 Operacija = Operacija.VratiProizvodjace
             };
             Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            while(GlavnaKontroler.proizvodjaci == null)
+            while (GlavnaKontroler.proizvodjaci == null)
             {
-                if(GlavnaKontroler.proizvodjaci != null) proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
+                Thread.Sleep(100);
             }
+            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
             this.uc = uc;
         }
         public void InitData()
@@ -50,6 +52,7 @@ namespace ClientForms.GUIKontroler
         }
         public void DodajSlatkise()
         {
+            
             Zahtev zahtev = new Zahtev()
             {
                 Operacija = Operacija.DodajSlatkise,

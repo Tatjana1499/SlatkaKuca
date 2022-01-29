@@ -37,9 +37,54 @@ namespace Server.AplikacionaLogika
         public List<Proizvodjac> VratiProizvodjace()
         {
             OpstaSO so = new VratiProizvodjaceSO();
-            so.ExecuteTemplate();
+            try
+            {
+                so.ExecuteTemplate();
+            }
+           catch (Exception ex)
+            {
+                throw;
+            }
             return ((VratiProizvodjaceSO)so).proizvodjaci;
+
         }
+
+        public List<Slatkis> VratiSlatkise()
+        {
+            OpstaSO so = new VratiSlatkiseSO();
+            try
+            {
+                so.ExecuteTemplate();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return ((VratiSlatkiseSO)so).slatkisi;
+
+        }
+        public List<Slatkis> VratiOdabraneSlatkise(Proizvodjac proizvodjac)
+        {
+            List<Slatkis> sviSl = VratiSlatkise();
+            List<Slatkis> odabraniSl = new List<Slatkis>();
+
+            foreach (Slatkis s in sviSl)
+            {
+                if(s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID)
+                {
+                    odabraniSl.Add(s);
+                }
+            }
+            return odabraniSl;
+        }
+
+        public bool ObrisiSlatkis(Slatkis slatkis)
+        {
+            OpstaSO so = new ObrisiSlatkisSO(slatkis);
+            so.ExecuteTemplate();
+            return ((ObrisiSlatkisSO)so).uspesno;
+        }
+
         /*
         public void SaveInvoice(Invoice i)
         {

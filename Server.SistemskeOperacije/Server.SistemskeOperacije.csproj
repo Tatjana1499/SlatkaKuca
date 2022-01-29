@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="DodajProizvodjacaSO.cs" />
     <Compile Include="DodajSlatkiseSO.cs" />
+    <Compile Include="ObrisiSlatkisSO.cs" />
     <Compile Include="OpstaSO.cs" />
     <Compile Include="PrijavaSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VratiProizvodjaceSO.cs" />
+    <Compile Include="VratiSlatkiseSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

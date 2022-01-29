@@ -26,7 +26,9 @@ namespace Server.Repozitorijum
         }
         public void Delete(IDomenskiObjekat obj)
         {
-            throw new NotImplementedException();
+            SqlCommand command = broker.CreateCommand();
+            command.CommandText = $"DELETE FROM {obj.NazivTabele} WHERE {obj.UslovIzbacivanja}";
+            command.ExecuteNonQuery();
         }
         public List<IDomenskiObjekat> GetAll(IDomenskiObjekat obj)
         {

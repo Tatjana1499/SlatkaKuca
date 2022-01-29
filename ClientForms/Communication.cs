@@ -38,14 +38,7 @@ namespace ClientForms
         public T GetResult<T>() where T : class
         {
             T response = helper.Receive<T>();
-            if (response is Odgovor o && !o.Uspesnost)
-            {
-                return null;//OBRADI
-            }
-            else
-            {
                 return (T)response;
-            }
         }
 
         public void SendRequest<T>(T obj) where T : class

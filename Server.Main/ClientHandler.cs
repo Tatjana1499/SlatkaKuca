@@ -58,7 +58,7 @@ namespace Server.Main
                             if(odgovor.Poruka == null)
                             {
                                 odgovor.Uspesnost = false;
-                                //poruka o gresci
+                            odgovor.Greska = "Korisnik ne postoji.";
                             }
                             break;
 
@@ -72,7 +72,7 @@ namespace Server.Main
                         if (odgovor.Poruka == null)
                         {
                             odgovor.Uspesnost = false;
-                            //poruka o gresci
+                            odgovor.Greska = "Proizvodjac nije dodat";
                         }
                         break;
                     case Operacija.VratiProizvodjace:
@@ -86,9 +86,25 @@ namespace Server.Main
                         break;
                     case Operacija.DodajSlatkise:
                         odgovor.Poruka = zahtev.Poruka;
-                        odgovor.Uspesnost = true;
                         odgovor.Operacija = Operacija.DodajSlatkise;
                         Kontroler.Instanca.DodajSlatkise(zahtev.Poruka);
+                        break;
+                    case Operacija.VratiOdabraneSlatkise:
+                        odgovor.Poruka = Kontroler.Instanca.VratiOdabraneSlatkise((Proizvodjac)zahtev.Poruka);
+                        odgovor.Operacija = Operacija.VratiOdabraneSlatkise;
+                        if (odgovor.Poruka == null)
+                        {
+                            odgovor.Uspesnost = false;
+                            //poruka o gresci
+                        }
+                        break;
+                    case Operacija.ObrisiSlatkis:
+                        odgovor.Uspesnost = Kontroler.Instanca.ObrisiSlatkis((Slatkis)zahtev.Poruka);
+                        odgovor.Operacija = Operacija.ObrisiSlatkis;
+                        if (!odgovor.Uspesnost)
+                        {
+                            odgovor.Greska = "Slatkis nije obrisan.";
+                        }
                         break;
                 }
             }
@@ -96,6 +112,7 @@ namespace Server.Main
             {
                 Debug.WriteLine(ex.Message);
                 odgovor.Uspesnost = false;
+                return odgovor;
             }
             return odgovor;
         }

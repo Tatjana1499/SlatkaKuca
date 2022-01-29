@@ -19,6 +19,8 @@ namespace Server.SistemskeOperacije
         {
             foreach(var item in slatkisi)
             {
+                if (item.Proizvodjac == null || item.Naziv == null || item.Naziv == "") 
+                    throw new Exception();
                 repository.Save(item);
             }
         }

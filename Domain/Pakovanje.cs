@@ -24,6 +24,8 @@ namespace Domain
 
         public string UbaciVrednosti => $"{PakovanjeID}, '{Naziv}', {Kolicina}, {EnergetskaVrednost}, {Vlakna}, {Secer}, {UgljeniHidrati}, {Proteini}, {Slatkis.SlatkisID}";
 
+        public string UslovIzbacivanja => $"{PakovanjeID} = Id";
+
         public IDomenskiObjekat ProcitajObjekat(SqlDataReader reader)
         {
             Pakovanje p = new Pakovanje

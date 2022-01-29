@@ -11,6 +11,7 @@ namespace Domain
     {
         string NazivTabele { get; }
         string UbaciVrednosti { get; }
+        string UslovIzbacivanja { get; }
 
         IDomenskiObjekat ProcitajObjekat(SqlDataReader result);
     }

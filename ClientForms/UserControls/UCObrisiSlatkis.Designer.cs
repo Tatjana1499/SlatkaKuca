@@ -1,4 +1,6 @@
-﻿namespace ClientForms.UserControls
+﻿using System.Windows.Forms;
+
+namespace ClientForms.UserControls
 {
     partial class UCObrisiSlatkis
     {
@@ -28,9 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbOdabraniSlatkis = new System.Windows.Forms.GroupBox();
             this.gbNadjeni = new System.Windows.Forms.GroupBox();
-            this.btnIzaberi = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             this.dgvNadjeniSlatkisi = new System.Windows.Forms.DataGridView();
             this.gbPretraga = new System.Windows.Forms.GroupBox();
             this.btnPretrazi = new System.Windows.Forms.Button();
@@ -40,34 +41,27 @@
             this.gbPretraga.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbOdabraniSlatkis
-            // 
-            this.gbOdabraniSlatkis.Location = new System.Drawing.Point(505, 104);
-            this.gbOdabraniSlatkis.Name = "gbOdabraniSlatkis";
-            this.gbOdabraniSlatkis.Size = new System.Drawing.Size(274, 298);
-            this.gbOdabraniSlatkis.TabIndex = 5;
-            this.gbOdabraniSlatkis.TabStop = false;
-            this.gbOdabraniSlatkis.Text = "Odabrani slatkiš";
-            // 
             // gbNadjeni
             // 
-            this.gbNadjeni.Controls.Add(this.btnIzaberi);
+            this.gbNadjeni.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbNadjeni.Controls.Add(this.btnObrisi);
             this.gbNadjeni.Controls.Add(this.dgvNadjeniSlatkisi);
-            this.gbNadjeni.Location = new System.Drawing.Point(233, 104);
+            this.gbNadjeni.Location = new System.Drawing.Point(142, 104);
             this.gbNadjeni.Name = "gbNadjeni";
-            this.gbNadjeni.Size = new System.Drawing.Size(261, 298);
+            this.gbNadjeni.Size = new System.Drawing.Size(546, 298);
             this.gbNadjeni.TabIndex = 4;
             this.gbNadjeni.TabStop = false;
             this.gbNadjeni.Text = "Lista nađenih slatkiša";
             // 
-            // btnIzaberi
+            // btnObrisi
             // 
-            this.btnIzaberi.Location = new System.Drawing.Point(156, 248);
-            this.btnIzaberi.Name = "btnIzaberi";
-            this.btnIzaberi.Size = new System.Drawing.Size(91, 43);
-            this.btnIzaberi.TabIndex = 1;
-            this.btnIzaberi.Text = "Izaberi";
-            this.btnIzaberi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Location = new System.Drawing.Point(427, 248);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(91, 43);
+            this.btnObrisi.TabIndex = 1;
+            this.btnObrisi.Text = "Obriši izabrani";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // dgvNadjeniSlatkisi
             // 
@@ -79,14 +73,15 @@
             this.dgvNadjeniSlatkisi.ReadOnly = true;
             this.dgvNadjeniSlatkisi.RowHeadersWidth = 51;
             this.dgvNadjeniSlatkisi.RowTemplate.Height = 24;
-            this.dgvNadjeniSlatkisi.Size = new System.Drawing.Size(240, 209);
+            this.dgvNadjeniSlatkisi.Size = new System.Drawing.Size(473, 209);
             this.dgvNadjeniSlatkisi.TabIndex = 0;
             // 
             // gbPretraga
             // 
+            this.gbPretraga.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbPretraga.Controls.Add(this.btnPretrazi);
             this.gbPretraga.Controls.Add(this.cmbProizvodjaci);
-            this.gbPretraga.Location = new System.Drawing.Point(233, 24);
+            this.gbPretraga.Location = new System.Drawing.Point(142, 24);
             this.gbPretraga.Name = "gbPretraga";
             this.gbPretraga.Size = new System.Drawing.Size(546, 64);
             this.gbPretraga.TabIndex = 3;
@@ -101,6 +96,7 @@
             this.btnPretrazi.TabIndex = 1;
             this.btnPretrazi.Text = "Pretraži";
             this.btnPretrazi.UseVisualStyleBackColor = true;
+            this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
             // cmbProizvodjaci
             // 
@@ -114,7 +110,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gbOdabraniSlatkis);
             this.Controls.Add(this.gbNadjeni);
             this.Controls.Add(this.gbPretraga);
             this.Name = "UCObrisiSlatkis";
@@ -127,13 +122,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbOdabraniSlatkis;
         private System.Windows.Forms.GroupBox gbNadjeni;
-        private System.Windows.Forms.Button btnIzaberi;
+        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.DataGridView dgvNadjeniSlatkisi;
         private System.Windows.Forms.GroupBox gbPretraga;
         private System.Windows.Forms.Button btnPretrazi;
         private System.Windows.Forms.ComboBox cmbProizvodjaci;
+
+        public GroupBox GbNadjeni { get => gbNadjeni; set => gbNadjeni = value; }
+        public Button BtnObrisi { get => btnObrisi; set => btnObrisi = value; }
+        public DataGridView DgvNadjeniSlatkisi { get => dgvNadjeniSlatkisi; set => dgvNadjeniSlatkisi = value; }
+        public GroupBox GbPretraga { get => gbPretraga; set => gbPretraga = value; }
+        public Button BtnPretrazi { get => btnPretrazi; set => btnPretrazi = value; }
+        public ComboBox CmbProizvodjaci { get => cmbProizvodjaci; set => cmbProizvodjaci = value; }
     }
 }

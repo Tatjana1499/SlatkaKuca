@@ -12,6 +12,9 @@ namespace Common
         Kraj,
         DodajProizvodjaca,
         VratiProizvodjace,
-        DodajSlatkise
+        DodajSlatkise,
+        VratiSlatkise,
+        VratiOdabraneSlatkise,
+        ObrisiSlatkis
     }
 }
