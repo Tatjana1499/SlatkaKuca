@@ -46,7 +46,7 @@ namespace ClientForms.UserControls
             this.lblNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaziv.AutoSize = true;
             this.lblNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNaziv.Location = new System.Drawing.Point(341, 92);
+            this.lblNaziv.Location = new System.Drawing.Point(213, 92);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(61, 20);
             this.lblNaziv.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace ClientForms.UserControls
             // 
             this.txtNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNaziv.Location = new System.Drawing.Point(490, 92);
+            this.txtNaziv.Location = new System.Drawing.Point(362, 92);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(162, 27);
             this.txtNaziv.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace ClientForms.UserControls
             // 
             this.txtLokacija.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLokacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLokacija.Location = new System.Drawing.Point(490, 152);
+            this.txtLokacija.Location = new System.Drawing.Point(362, 152);
             this.txtLokacija.Name = "txtLokacija";
             this.txtLokacija.Size = new System.Drawing.Size(162, 27);
             this.txtLokacija.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace ClientForms.UserControls
             // 
             this.txtRadnoVreme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRadnoVreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRadnoVreme.Location = new System.Drawing.Point(490, 223);
+            this.txtRadnoVreme.Location = new System.Drawing.Point(362, 223);
             this.txtRadnoVreme.Name = "txtRadnoVreme";
             this.txtRadnoVreme.Size = new System.Drawing.Size(162, 27);
             this.txtRadnoVreme.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace ClientForms.UserControls
             // 
             this.txtSajt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSajt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSajt.Location = new System.Drawing.Point(490, 300);
+            this.txtSajt.Location = new System.Drawing.Point(362, 300);
             this.txtSajt.Name = "txtSajt";
             this.txtSajt.Size = new System.Drawing.Size(162, 27);
             this.txtSajt.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace ClientForms.UserControls
             this.lblLokacija.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLokacija.AutoSize = true;
             this.lblLokacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLokacija.Location = new System.Drawing.Point(344, 155);
+            this.lblLokacija.Location = new System.Drawing.Point(216, 155);
             this.lblLokacija.Name = "lblLokacija";
             this.lblLokacija.Size = new System.Drawing.Size(81, 20);
             this.lblLokacija.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace ClientForms.UserControls
             this.lblRadnoVreme.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRadnoVreme.AutoSize = true;
             this.lblRadnoVreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRadnoVreme.Location = new System.Drawing.Point(344, 226);
+            this.lblRadnoVreme.Location = new System.Drawing.Point(216, 226);
             this.lblRadnoVreme.Name = "lblRadnoVreme";
             this.lblRadnoVreme.Size = new System.Drawing.Size(118, 20);
             this.lblRadnoVreme.TabIndex = 6;
@@ -115,7 +115,7 @@ namespace ClientForms.UserControls
             this.lblSajt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSajt.AutoSize = true;
             this.lblSajt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSajt.Location = new System.Drawing.Point(344, 303);
+            this.lblSajt.Location = new System.Drawing.Point(216, 303);
             this.lblSajt.Name = "lblSajt";
             this.lblSajt.Size = new System.Drawing.Size(48, 20);
             this.lblSajt.TabIndex = 7;
@@ -125,7 +125,7 @@ namespace ClientForms.UserControls
             // 
             this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(547, 362);
+            this.btnDodaj.Location = new System.Drawing.Point(419, 362);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(84, 36);
             this.btnDodaj.TabIndex = 8;

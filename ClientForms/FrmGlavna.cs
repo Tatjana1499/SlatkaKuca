@@ -26,33 +26,27 @@ namespace ClientForms
             thread.IsBackground = true;
             thread.Start();
         }
-
         private void kreirajToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCDodajProizvodjaca());
         }
-
         private void kreirajToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCDodajSlatkis());
         }
-
         private void pretragaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCPretragaSlatkisa());
         }
-
         private void brisanjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCObrisiSlatkis());
         }
-
         private void PromeniPanel(UserControl userControl)
         {
             pnlGlavni.Controls.Clear();
             pnlGlavni.Controls.Add(userControl);
         }
-
         private void FrmGlavna_FormClosed(object sender, FormClosedEventArgs e)
         {
             try

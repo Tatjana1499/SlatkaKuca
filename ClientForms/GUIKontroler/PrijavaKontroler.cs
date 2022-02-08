@@ -2,6 +2,7 @@
 using Domain;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,6 @@ namespace ClientForms.GUIKontroler
                         KorisnickaSifra = frmPrijava.TxtSifra.Text
                     }
                 };
-
                 Communication.Instanca.Connect();
                 Communication.Instanca.SendRequest(zahtev);
                 Odgovor odgovor = Communication.Instanca.GetResult<Odgovor>();
@@ -38,16 +38,14 @@ namespace ClientForms.GUIKontroler
                     frmPrijava.DialogResult = DialogResult.OK;
                 }
                 else
-                {
                     MessageBox.Show("Korisnik ne postoji!");
-                }
             }
             catch (Exception ex)
             {
-                //OBRADI
+                Debug.WriteLine(ex.Message);
+                MessageBox.Show("Greska pri radu sa serverom.");
             }
         }
-
         public void Osvezi(TextBox text)
         {
             text.BackColor = Color.White;

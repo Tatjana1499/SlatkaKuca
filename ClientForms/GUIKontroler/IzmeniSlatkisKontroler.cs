@@ -26,7 +26,7 @@ namespace ClientForms.GUIKontroler
                 Operacija = Operacija.VratiProizvodjace
             };
             Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            while (GlavnaKontroler.proizvodjaci == null)  Thread.Sleep(100);
+            Thread.Sleep(100);
             proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
             this.uc = uc;
         }
@@ -41,15 +41,15 @@ namespace ClientForms.GUIKontroler
         {
             Zahtev zahtevSl = new Zahtev()
             {
-                Operacija = Operacija.VratiOdabraneSlatkise,
+                Operacija = Operacija.VratiSlatkise, //PROMENILA
                 Poruka = (Proizvodjac)uc.CmbProizvodjaci.SelectedItem
             };
             Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
-            while (GlavnaKontroler.odabraniSlatkisi == null)
+            while (GlavnaKontroler.slatkisi == null)
             {
                 Thread.Sleep(100);
             }
-            slatkisi = new BindingList<Slatkis>(GlavnaKontroler.odabraniSlatkisi);
+            slatkisi = new BindingList<Slatkis>(GlavnaKontroler.slatkisi);
 
 
             uc.GbNadjeniSlatkisi.Visible = true;

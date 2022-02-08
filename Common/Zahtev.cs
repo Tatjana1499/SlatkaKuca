@@ -11,6 +11,5 @@ namespace Common
     {
         public Operacija Operacija { get; set; }
         public Object Poruka { get; set; }
-        
     }
 }

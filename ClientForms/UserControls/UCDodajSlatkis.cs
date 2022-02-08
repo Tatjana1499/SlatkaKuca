@@ -25,5 +25,10 @@ namespace ClientForms.UserControls
         {
             kontroler.DodajSlatkise();
         }
+
+        private void btnIzbrisiRed_Click(object sender, EventArgs e)
+        {
+            kontroler.IzbrisiRed();
+        }
     }
 }

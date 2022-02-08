@@ -14,7 +14,6 @@ namespace Common
         VratiProizvodjace,
         DodajSlatkise,
         VratiSlatkise,
-        VratiOdabraneSlatkise,
         ObrisiSlatkis,
         DodajPrMesto,
         IzmeniSlatkis

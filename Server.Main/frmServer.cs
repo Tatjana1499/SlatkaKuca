@@ -19,7 +19,7 @@ namespace Server.Main
             InitializeComponent();
             btnStart.Enabled = true;
             btnStop.Enabled = false;
-            txtStatus.Text = "Server je zaustavljen!";
+            txtStatus.Text = "Server nije pokrenut.";
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -31,11 +31,11 @@ namespace Server.Main
                 Thread thread = new Thread(server.HandleClient);
                 thread.IsBackground = true;
                 thread.Start();
-                txtStatus.Text = "Server je pokrenut!";
+                txtStatus.Text = "Server je pokrenut.";
             }
             else
             {
-                MessageBox.Show("Server nije pokrenut!");
+                MessageBox.Show("Server nije pokrenut.");
             }
         }
         private void btnStop_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Server.Main
             server = null;
             btnStart.Enabled = true;
             btnStop.Enabled = false;
-            txtStatus.Text = "Server je zaustavljen!";
+            txtStatus.Text = "Server je zaustavljen.";
         }
         private void frmServer_FormClosed(object sender, FormClosedEventArgs e)
         {

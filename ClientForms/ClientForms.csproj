@@ -67,9 +67,16 @@
     <Compile Include="GUIKontroler\ObrisiSlatkisKontroler.cs" />
     <Compile Include="GUIKontroler\PretragaSlatkisaKontroler.cs" />
     <Compile Include="GUIKontroler\PrijavaKontroler.cs" />
+    <Compile Include="GUIKontroler\UnesiDnevnuProdajuKontroler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesija.cs" />
+    <Compile Include="UserControls\UCDnevnaProdaja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDnevnaProdaja.Designer.cs">
+      <DependentUpon>UCDnevnaProdaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDodajProdajnoMesto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UCDnevnaProdaja.resx">
+      <DependentUpon>UCDnevnaProdaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDodajProdajnoMesto.resx">
       <DependentUpon>UCDodajProdajnoMesto.cs</DependentUpon>
     </EmbeddedResource>

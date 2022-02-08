@@ -21,3 +21,4 @@ C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\bin\Debug\Domain.d
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\bin\Debug\Domain.pdb
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCDodajProdajnoMesto.resources
 C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCIzmeniSlatkis.resources
+C:\Users\Tatjana Bailovic\source\repos\SlatkaKuca\ClientForms\obj\Debug\ClientForms.UserControls.UCDnevnaProdaja.resources

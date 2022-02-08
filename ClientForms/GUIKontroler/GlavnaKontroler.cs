@@ -3,6 +3,7 @@ using Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,8 @@ namespace ClientForms.GUIKontroler
     {
         
         public static List<Proizvodjac> proizvodjaci;
-        public static List<Slatkis> odabraniSlatkisi;
+        public static List<Slatkis> slatkisi;
 
-        public GlavnaKontroler()
-        {
-            //PRIMI FORMU
-        }
         public void PrimiPoruku()
         {
             Odgovor odgovor = new Odgovor();
@@ -47,38 +44,37 @@ namespace ClientForms.GUIKontroler
                             break;
                         case Operacija.DodajProizvodjaca:
                             if (odgovor == null || !odgovor.Uspesnost)
-                            {
                                 MessageBox.Show("Došlo je do greške, proizvođač nije upamćen.");
-                                return;
-                            }
                             else
                             {
                                 MessageBox.Show("Proizvođač je uspešno upamćen.");
-
+                                proizvodjaci.Add((Proizvodjac)odgovor.Poruka);
                             }
                             break;
                         case Operacija.VratiProizvodjace:
                             proizvodjaci = (List<Proizvodjac>)odgovor.Poruka;
                             break;
                         case Operacija.DodajSlatkise:
-                            if(odgovor.Uspesnost == false)
+                            if(!odgovor.Uspesnost)
                             {
-                            MessageBox.Show("Slatkisi nisu dodati.");
+                                MessageBox.Show("Slatkiši nisu dodati, popuni sva polja.");
                                 continue;
                             }
-                            MessageBox.Show("Uspesno dodati slatkisi.");
+                            MessageBox.Show("Uspešno dodati slatkiši.");
+                            if(slatkisi != null) foreach (Slatkis s in (List<Slatkis>)odgovor.Poruka) slatkisi.Add(s);
                             break;
-                        case Operacija.VratiOdabraneSlatkise:
-                            odabraniSlatkisi = (List<Slatkis>)odgovor.Poruka;
+                        case Operacija.VratiSlatkise:
+                            slatkisi = (List<Slatkis>)odgovor.Poruka;
                             break;
                         case Operacija.ObrisiSlatkis:
                             if (odgovor.Uspesnost)
                             {
                                 MessageBox.Show("Uspešno obrisan slatkiš.");
+
+                                ObrisiSlatkisKontroler.slatkisi = new BindingList<Slatkis>(ObrisiSlatkisKontroler.slatkisi.Where(x => x.SlatkisID != ((Slatkis)odgovor.Poruka).SlatkisID).ToList());
                                 continue;
                             }
                             MessageBox.Show("Slatkiš nije obrisan.");
-
                             break;
                         case Operacija.DodajPrMesto:
                             if (odgovor.Uspesnost == false)
@@ -95,16 +91,33 @@ namespace ClientForms.GUIKontroler
                                 continue;
                             }
                             MessageBox.Show("Uspesno izmenjen slatkiš.");
+                            foreach(Slatkis s in slatkisi)
+                            {
+                                if(s.SlatkisID == ((Slatkis)odgovor.Poruka).SlatkisID)
+                                {
+                                    s.Naziv = ((Slatkis)odgovor.Poruka).Naziv;
+                                    s.Proizvodjac = ((Slatkis)odgovor.Poruka).Proizvodjac;
+                                }
+                            }
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(odgovor.Greska);
+                Debug.WriteLine(ex.Message);
             }
-
-
+        }
+        public static Proizvodjac vratiProizvodjaca(Slatkis s)
+        {
+            foreach (Proizvodjac proizvodjac in proizvodjaci)
+            {
+                if (proizvodjac.ProizvodjacID == s.Proizvodjac.ProizvodjacID)
+                {
+                    return proizvodjac;
+                }
+            }
+            return null;
         }
     }
 }

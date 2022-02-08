@@ -69,6 +69,7 @@ namespace ClientForms.UserControls
             this.btnIzbrisiRed.TabIndex = 2;
             this.btnIzbrisiRed.Text = "Izbriši red";
             this.btnIzbrisiRed.UseVisualStyleBackColor = true;
+            this.btnIzbrisiRed.Click += new System.EventHandler(this.btnIzbrisiRed_Click);
             // 
             // UCDodajSlatkis
             // 

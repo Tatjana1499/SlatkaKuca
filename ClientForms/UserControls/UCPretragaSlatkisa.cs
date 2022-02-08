@@ -17,16 +17,13 @@ namespace ClientForms.UserControls
         public UCPretragaSlatkisa()
         {
             InitializeComponent();
-          
             kontroler = new PretragaSlatkisaKontroler(this);
             kontroler.InitData();
         }
-
         private void btnPretrazi_Click(object sender, EventArgs e)
         {
             kontroler.PretraziSlatkise();
         }
-
         private void btnIzaberi_Click(object sender, EventArgs e)
         {
             kontroler.DetaljiOdabranog();

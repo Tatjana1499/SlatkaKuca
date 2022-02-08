@@ -24,6 +24,11 @@ namespace ClientForms.GUIKontroler
                 MessageBox.Show("Popunite sve polja.");
                 return;
             }
+            if (uc.TxtRadnoVreme.Text.Any(x => char.IsLetter(x)))
+            {
+                MessageBox.Show("Radno vreme ne sme da sadrži slova.");
+                return;
+            }
             Zahtev zahtev = new Zahtev() 
             {
                 Operacija = Operacija.DodajPrMesto,
@@ -36,9 +41,10 @@ namespace ClientForms.GUIKontroler
                 }
             };
             Communication.Instanca.SendRequest(zahtev);
+            uc.TxtNaziv.Text = "";
+            uc.TxtLokacija.Text = "";
+            uc.TxtRadnoVreme.Text = "";
+            uc.TxtSajt.Text = "";
         }
-
-
-
     }
 }

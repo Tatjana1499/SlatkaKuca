@@ -27,13 +27,11 @@ namespace Server.AplikacionaLogika
             so.ExecuteTemplate();
             return ((PrijavaSO)so).User;
         }
-
         public void DodajSlatkise(Object poruka)
         {
             OpstaSO so = new DodajSlatkiseSO(poruka);
             so.ExecuteTemplate();
         }
-
         public List<Proizvodjac> VratiProizvodjace()
         {
             OpstaSO so = new VratiProizvodjaceSO();
@@ -48,7 +46,6 @@ namespace Server.AplikacionaLogika
             return ((VratiProizvodjaceSO)so).proizvodjaci;
 
         }
-
         public List<Slatkis> VratiSlatkise()
         {
             OpstaSO so = new VratiSlatkiseSO();
@@ -63,28 +60,12 @@ namespace Server.AplikacionaLogika
             return ((VratiSlatkiseSO)so).slatkisi;
 
         }
-        public List<Slatkis> VratiOdabraneSlatkise(Proizvodjac proizvodjac)
-        {
-            List<Slatkis> sviSl = VratiSlatkise();
-            List<Slatkis> odabraniSl = new List<Slatkis>();
-
-            foreach (Slatkis s in sviSl)
-            {
-                if(s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID)
-                {
-                    odabraniSl.Add(s);
-                }
-            }
-            return odabraniSl;
-        }
-
         public bool ObrisiSlatkis(Slatkis slatkis)
         {
             OpstaSO so = new ObrisiSlatkisSO(slatkis);
             so.ExecuteTemplate();
             return ((ObrisiSlatkisSO)so).uspesno;
         }
-
         public void IzmeniSlatkis(Slatkis slatkis)
         {
             IzmeniSlatkisSO so = new IzmeniSlatkisSO(slatkis);
@@ -96,12 +77,10 @@ namespace Server.AplikacionaLogika
             so.ExecuteTemplate();
             return so.Proizvodjac;
         }
-
         public void DodajPrMesto(ProdajnoMesto prodajnoMesto)
         {
             OpstaSO so = new DodajPrMestoSO(prodajnoMesto);
             so.ExecuteTemplate();
-            
         }
     }
 }

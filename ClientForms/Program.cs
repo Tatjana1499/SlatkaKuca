@@ -16,29 +16,21 @@ namespace ClientForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            while (true)
-            {
                 try
                 {
                     FrmPrijava frmPrijava = new FrmPrijava();
                     frmPrijava.ShowDialog();
                     DialogResult rez = frmPrijava.DialogResult;
                     frmPrijava.Dispose();
-
                     if (rez == DialogResult.OK)
                     {
                         Application.Run(new FrmGlavna());
-                    }
-                    if (rez == DialogResult.Cancel)
-                    {
-                        break;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Greška pri radu sa serverom!");
                 }
-            }
         }
     }
 }

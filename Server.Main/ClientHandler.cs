@@ -50,68 +50,47 @@ namespace Server.Main
             Odgovor odgovor = new Odgovor();
             try
             {
-                
                 switch (zahtev.Operacija)
                 {
-                        case Operacija.Prijava:
-                            odgovor.Poruka = Kontroler.Instanca.Login((User)zahtev.Poruka);
-                            if(odgovor.Poruka == null)
-                            {
-                                odgovor.Uspesnost = false;
-                            odgovor.Greska = "Korisnik ne postoji.";
-                            }
-                            break;
-
-                        case Operacija.Kraj:
-                            kraj = true;
-
+                    case Operacija.Prijava:
+                        odgovor.Poruka = Kontroler.Instanca.Login((User)zahtev.Poruka);
+                        if(odgovor.Poruka == null)  odgovor.Uspesnost = false;
+                        break;
+                    case Operacija.Kraj:
+                        kraj = true;
                         break;
                     case Operacija.DodajProizvodjaca:
                         odgovor.Poruka = Kontroler.Instanca.DodajProizvodjaca((Proizvodjac)zahtev.Poruka);
                         odgovor.Operacija = Operacija.DodajProizvodjaca;
-                        if (odgovor.Poruka == null)
-                        {
-                            odgovor.Uspesnost = false;
-                            odgovor.Greska = "Proizvodjac nije dodat";
-                        }
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
                         break;
                     case Operacija.VratiProizvodjace:
                         odgovor.Poruka = Kontroler.Instanca.VratiProizvodjace();
                         odgovor.Operacija = Operacija.VratiProizvodjace;
-                        if (odgovor.Poruka == null)
-                        {
-                            odgovor.Uspesnost = false;
-                            //poruka o gresci
-                        }
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
                         break;
                     case Operacija.DodajSlatkise:
-                      //  odgovor.Poruka = zahtev.Poruka;
+                        odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.DodajSlatkise;
                         Kontroler.Instanca.DodajSlatkise(zahtev.Poruka);
                         break;
-                    case Operacija.VratiOdabraneSlatkise:
-                        odgovor.Poruka = Kontroler.Instanca.VratiOdabraneSlatkise((Proizvodjac)zahtev.Poruka);
-                        odgovor.Operacija = Operacija.VratiOdabraneSlatkise;
-                        if (odgovor.Poruka == null)
-                        {
-                            odgovor.Uspesnost = false;
-                            //poruka o gresci
-                        }
+                    case Operacija.VratiSlatkise:
+                        odgovor.Poruka = Kontroler.Instanca.VratiSlatkise();
+                        odgovor.Operacija = Operacija.VratiSlatkise;
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
                         break;
                     case Operacija.ObrisiSlatkis:
+                        odgovor.Poruka = zahtev.Poruka;
                         odgovor.Uspesnost = Kontroler.Instanca.ObrisiSlatkis((Slatkis)zahtev.Poruka);
                         odgovor.Operacija = Operacija.ObrisiSlatkis;
-                        if (!odgovor.Uspesnost)
-                        {
-                            odgovor.Greska = "Slatkis nije obrisan.";
-                        }
                         break;
                     case Operacija.DodajPrMesto:
-                       // odgovor.Poruka = zahtev.Poruka;
+                        odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.DodajPrMesto;
                         Kontroler.Instanca.DodajPrMesto((ProdajnoMesto)zahtev.Poruka);
                         break;
                     case Operacija.IzmeniSlatkis:
+                        odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.IzmeniSlatkis;
                         Kontroler.Instanca.IzmeniSlatkis((Slatkis)zahtev.Poruka);
                         break;
