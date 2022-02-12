@@ -18,8 +18,6 @@ namespace ClientForms.GUIKontroler
         BindingList<Slatkis> slatkisi;
         Proizvodjac proizvodjac;
         BindingList<Proizvodjac> proizvodjaci;
-
-
         public IzmeniSlatkisKontroler(UCIzmeniSlatkis uc)
         {
             if (GlavnaKontroler.proizvodjaci == null)

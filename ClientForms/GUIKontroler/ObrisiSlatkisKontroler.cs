@@ -16,44 +16,66 @@ namespace ClientForms.GUIKontroler
     {
         UCObrisiSlatkis uc;
         BindingList<Proizvodjac> proizvodjaci;
-        public static BindingList<Slatkis> slatkisi;
+        BindingList<Slatkis> slatkisi;
         Proizvodjac proizvodjac;
         public ObrisiSlatkisKontroler(UCObrisiSlatkis uc)
         {
-            Zahtev zahtev = new Zahtev()
+            if(GlavnaKontroler.proizvodjaci == null)
             {
-                Operacija = Operacija.VratiProizvodjace
-            };
-            Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            Thread.Sleep(100);
-            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
+                Zahtev zahtev = new Zahtev()
+                {
+                    Operacija = Operacija.VratiProizvodjace
+                };
+                Communication.Instanca.SendRequest<Zahtev>(zahtev);
+                while(GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            }
             this.uc = uc;
-            this.uc.GbNadjeni.Visible = false;
         }
         public void InitData()
         {
-            uc.CmbProizvodjaci.DataSource = proizvodjaci;
+            GlavnaKontroler.ObrisanSlatkis += OsveziTabelu;
+            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
+            this.uc.GbNadjeni.Visible = false;
+            uc.CmbProizvodjaci.DataSource = GlavnaKontroler.proizvodjaci;
         }
         public void PretraziSlatkise()
         {
-            Zahtev zahtevSl = new Zahtev()
-            {
-                Operacija = Operacija.VratiSlatkise
-            };
-            Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
             proizvodjac = (Proizvodjac)uc.CmbProizvodjaci.SelectedItem;
-            Thread.Sleep(100);
+            if (proizvodjac == null)
+            {
+                uc.DgvNadjeniSlatkisi.DataSource = null;
+                MessageBox.Show("Niste odabrali proizvođača.");
+                return;
+            }
+            if(GlavnaKontroler.slatkisi == null)
+            {
+                Zahtev zahtevSl = new Zahtev()
+                {
+                    Operacija = Operacija.VratiSlatkise
+                };
+                Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
+                while(GlavnaKontroler.slatkisi == null) Thread.Sleep(10);
+            }
             slatkisi = new BindingList<Slatkis>();
             foreach (Slatkis s in GlavnaKontroler.slatkisi)
                 if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);
-
+            foreach(Slatkis s in slatkisi)
+            {
+                foreach(Proizvodjac p in proizvodjaci)
+                {
+                    if(s.Proizvodjac.ProizvodjacID == p.ProizvodjacID)
+                    {
+                        s.Proizvodjac = p;
+                        break;
+                    }
+                }
+            }
             uc.GbNadjeni.Visible = true;
             this.uc.DgvNadjeniSlatkisi.DataSource = slatkisi;
             this.uc.DgvNadjeniSlatkisi.Columns["NazivTabele"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["UbaciVrednosti"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["UslovIzbacivanja"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["PostaviVrednosti"].Visible = false;
-            //this.uc.DgvNadjeniSlatkisi.Columns["Proizvodjac"] = slatkisi[0].Proizvodjac.ToString();
         }
         public void ObrisiOdabrani()
         {
@@ -74,6 +96,13 @@ namespace ClientForms.GUIKontroler
                 Poruka = slatkis
             };
             Communication.Instanca.SendRequest<Zahtev>(zahtev);
+        }
+        public void OsveziTabelu(Object sender, EventArgs args)
+        {
+            slatkisi = new BindingList<Slatkis>();
+            foreach (Slatkis s in GlavnaKontroler.slatkisi)
+                if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);
+            uc.Invoke(new Action(() => { uc.DgvNadjeniSlatkisi.DataSource = slatkisi; }));
         }
     }
 }

@@ -16,6 +16,8 @@ namespace ClientForms.GUIKontroler
         public static List<Proizvodjac> proizvodjaci;
         public static List<Slatkis> slatkisi;
         public static EventHandler IzmenjenSlatkis;
+        public static EventHandler ObrisanSlatkis;
+
         public void PrimiPoruku()
         {
             Odgovor odgovor = new Odgovor();
@@ -66,14 +68,21 @@ namespace ClientForms.GUIKontroler
                             slatkisi = (List<Slatkis>)odgovor.Poruka;
                             break;
                         case Operacija.ObrisiSlatkis:
-                            if (odgovor.Uspesnost)
+                            if (!odgovor.Uspesnost)
                             {
-                                MessageBox.Show("Uspešno obrisan slatkiš.");
-
-                                ObrisiSlatkisKontroler.slatkisi = new BindingList<Slatkis>(ObrisiSlatkisKontroler.slatkisi.Where(x => x.SlatkisID != ((Slatkis)odgovor.Poruka).SlatkisID).ToList());
+                                MessageBox.Show("Slatkiš nije obrisan.");
                                 continue;
                             }
-                            MessageBox.Show("Slatkiš nije obrisan.");
+                            MessageBox.Show("Uspešno obrisan slatkiš.");
+                            foreach(Slatkis s in slatkisi)
+                            {
+                                if(s.SlatkisID == ((Slatkis)odgovor.Poruka).SlatkisID)
+                                {
+                                    slatkisi.Remove(s);
+                                    break;
+                                }
+                            }
+                            ObrisanSlatkis(null, EventArgs.Empty);
                             break;
                         case Operacija.DodajPrMesto:
                             if (odgovor.Uspesnost == false)
