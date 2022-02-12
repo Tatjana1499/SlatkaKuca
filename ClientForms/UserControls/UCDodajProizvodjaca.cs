@@ -19,7 +19,6 @@ namespace ClientForms.UserControls
             InitializeComponent();
             kontroler = new DodajProizvodjacaKontroler(this);
         }
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             kontroler.DodajProizvodjaca();

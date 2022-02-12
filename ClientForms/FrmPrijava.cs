@@ -19,12 +19,10 @@ namespace ClientForms
             InitializeComponent();
             prijavaKontroler = new PrijavaKontroler();
         }
-
         private void btnPrijava_Click(object sender, EventArgs e)
         {
             prijavaKontroler.Prijava(this);
         }
-
         private void txtKorIme_Click(object sender, EventArgs e)
         {
             prijavaKontroler.Osvezi((TextBox)sender);
@@ -34,7 +32,6 @@ namespace ClientForms
         {
             prijavaKontroler.Osvezi((TextBox)sender);
         }
-
         private void FrmPrijava_FormClosed(object sender, FormClosedEventArgs e)
         {
             //NAPRAVI

@@ -15,40 +15,38 @@ namespace ClientForms.GUIKontroler
     public class PretragaSlatkisaKontroler
     {
         UCPretragaSlatkisa uc;
-        BindingList<Proizvodjac> proizvodjaci;
         BindingList<Slatkis> slatkisi;
         Proizvodjac proizvodjac;
         public PretragaSlatkisaKontroler(UCPretragaSlatkisa uc)
         {
-            Zahtev zahtev = new Zahtev()
-            {
-                Operacija = Operacija.VratiProizvodjace
-            };
+            Zahtev zahtev = new Zahtev() { Operacija = Operacija.VratiProizvodjace };
             Communication.Instanca.SendRequest<Zahtev>(zahtev);
             while (GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
-            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
             this.uc = uc;
         }
         public void InitData()
         {
-            this.uc.GbOdabraniSlatkis.Visible = false;
-            this.uc.GbNadjeni.Visible = false;
-            this.uc.CmbProizvodjaci.DataSource = proizvodjaci;
+            uc.GbOdabraniSlatkis.Visible = false;
+            uc.GbNadjeni.Visible = false;
+            uc.CmbProizvodjaci.DataSource = GlavnaKontroler.proizvodjaci;
         }
         public void PretraziSlatkise()
         {
-            Zahtev zahtevSl = new Zahtev()
-            {
-                Operacija = Operacija.VratiSlatkise,
-            };
             proizvodjac = (Proizvodjac)uc.CmbProizvodjaci.SelectedItem;
+            if (proizvodjac == null)
+            {
+                Osvezi();
+                uc.DgvNadjeniSlatkisi.DataSource = null;
+                MessageBox.Show("Niste odabrali proizvođača.");
+                return;
+            }
+            Zahtev zahtevSl = new Zahtev() { Operacija = Operacija.VratiSlatkise };
             Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
-            Thread.Sleep(100);
+            while (GlavnaKontroler.slatkisi == null) Thread.Sleep(10);
             slatkisi = new BindingList<Slatkis>();
             foreach (Slatkis s in GlavnaKontroler.slatkisi)
                 if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);
-
-            this.uc.DgvNadjeniSlatkisi.DataSource = slatkisi;
+            uc.DgvNadjeniSlatkisi.DataSource = slatkisi;
             this.uc.DgvNadjeniSlatkisi.Columns["NazivTabele"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["UbaciVrednosti"].Visible = false;
             this.uc.DgvNadjeniSlatkisi.Columns["SlatkisID"].Visible = false;
@@ -59,12 +57,9 @@ namespace ClientForms.GUIKontroler
         }
         public void DetaljiOdabranog()
         {
-            uc.TxtID.Text = "";
-            uc.TxtNaziv.Text = "";
-            uc.TxtProizvodjac.Text = "";
+            Osvezi();
             if (uc.DgvNadjeniSlatkisi.SelectedRows.Count == 0)
             {
-               
                 MessageBox.Show("Niste odabrali slatkiš.");
                 return;
             }
@@ -79,6 +74,11 @@ namespace ClientForms.GUIKontroler
             uc.TxtNaziv.Text = s.Naziv;
             uc.TxtProizvodjac.Text = GlavnaKontroler.vratiProizvodjaca(s).ToString();
         }
-       
+        public void Osvezi()
+        {
+            uc.TxtID.Text = "";
+            uc.TxtNaziv.Text = "";
+            uc.TxtProizvodjac.Text = "";
+        }
     }
 }

@@ -58,16 +58,13 @@ namespace ClientForms
                 Debug.WriteLine(">>>>> FormClosed event >>>>>" + ex.Message);
             }
         }
-
         private void kreirajToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCDodajProdajnoMesto());
         }
-
         private void izmenaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCIzmeniSlatkis());
-
         }
     }
 }

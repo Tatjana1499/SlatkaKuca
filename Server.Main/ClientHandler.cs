@@ -21,18 +21,16 @@ namespace Server.Main
             this.socket = socket;
             helper = new CommunicationHelper(socket);
         }
-
         bool kraj = false;
-
         public void HandleRequest()
         {
             try
             {
                 while (!kraj)
                 {
-                    Zahtev request = helper.Receive<Zahtev>();
-                    Odgovor response = KreirajOdgovor(request);
-                    helper.Send(response);
+                    Zahtev zahtev = helper.Receive<Zahtev>();
+                    Odgovor odgovor = KreirajOdgovor(zahtev);
+                    helper.Send(odgovor);
                 }
             }
             catch (IOException ex)
@@ -44,7 +42,6 @@ namespace Server.Main
                 CloseSocket();
             }
         }
-
         public Odgovor KreirajOdgovor(Zahtev zahtev)
         {
             Odgovor odgovor = new Odgovor();

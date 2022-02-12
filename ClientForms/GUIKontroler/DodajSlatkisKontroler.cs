@@ -23,9 +23,12 @@ namespace ClientForms.GUIKontroler
         }
         public void InitData()
         {
-            Zahtev zahtev = new Zahtev() { Operacija = Operacija.VratiProizvodjace };
-            Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            while (GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            if (GlavnaKontroler.proizvodjaci == null)
+            {
+                Zahtev zahtev = new Zahtev() { Operacija = Operacija.VratiProizvodjace };
+                Communication.Instanca.SendRequest<Zahtev>(zahtev);
+                while (GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            }
             proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
             this.uc.DgvDodajSlatkis.DataSource = slatkisi;
 

@@ -16,49 +16,59 @@ namespace ClientForms.GUIKontroler
     {
         UCIzmeniSlatkis uc;
         BindingList<Slatkis> slatkisi;
-
+        Proizvodjac proizvodjac;
         BindingList<Proizvodjac> proizvodjaci;
+
 
         public IzmeniSlatkisKontroler(UCIzmeniSlatkis uc)
         {
-            Zahtev zahtev = new Zahtev()
+            if (GlavnaKontroler.proizvodjaci == null)
             {
-                Operacija = Operacija.VratiProizvodjace
-            };
-            Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            Thread.Sleep(100);
-            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
+                Zahtev zahtev = new Zahtev()
+                {
+                    Operacija = Operacija.VratiProizvodjace
+                };
+                Communication.Instanca.SendRequest<Zahtev>(zahtev);
+                while(GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            }
             this.uc = uc;
+            GlavnaKontroler.IzmenjenSlatkis += OsveziTabelu;
         }
         public void InitData()
         {
+            proizvodjaci = new BindingList<Proizvodjac>(GlavnaKontroler.proizvodjaci);
             uc.GbNadjeniSlatkisi.Visible = false;
             uc.GbOdabraniSlatkis.Visible = false;
-            uc.CmbProizvodjac.DataSource = proizvodjaci;
+            uc.CmbProizvodjac.DataSource = GlavnaKontroler.proizvodjaci;
             uc.CmbProizvodjaci.DataSource = proizvodjaci;
         }
         public void PrikaziSlatkise()
         {
-            Zahtev zahtevSl = new Zahtev()
+            proizvodjac = (Proizvodjac)uc.CmbProizvodjaci.SelectedItem;
+            if (proizvodjac == null)
             {
-                Operacija = Operacija.VratiSlatkise, //PROMENILA
-                Poruka = (Proizvodjac)uc.CmbProizvodjaci.SelectedItem
-            };
-            Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
-            while (GlavnaKontroler.slatkisi == null)
-            {
-                Thread.Sleep(100);
+                Osvezi();
+                uc.DgvSlatkisi.DataSource = null;
+                MessageBox.Show("Niste odabrali proizvođača.");
+                return;
             }
-            slatkisi = new BindingList<Slatkis>(GlavnaKontroler.slatkisi);
-
-
-            uc.GbNadjeniSlatkisi.Visible = true;
-            this.uc.DgvSlatkisi.DataSource = slatkisi;
+            if (GlavnaKontroler.slatkisi == null)
+            {
+                Zahtev zahtevSl = new Zahtev() { Operacija = Operacija.VratiSlatkise };
+                Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
+                while (GlavnaKontroler.slatkisi == null) Thread.Sleep(10);
+            }
+            slatkisi = new BindingList<Slatkis>();
+            foreach (Slatkis s in GlavnaKontroler.slatkisi)
+                if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);
+            uc.DgvSlatkisi.DataSource = slatkisi;
             this.uc.DgvSlatkisi.Columns["NazivTabele"].Visible = false;
             this.uc.DgvSlatkisi.Columns["UbaciVrednosti"].Visible = false;
             this.uc.DgvSlatkisi.Columns["SlatkisID"].Visible = false;
             this.uc.DgvSlatkisi.Columns["Proizvodjac"].Visible = false;
             this.uc.DgvSlatkisi.Columns["UslovIzbacivanja"].Visible = false;
+            this.uc.DgvSlatkisi.Columns["PostaviVrednosti"].Visible = false;
+            uc.GbNadjeniSlatkisi.Visible = true;
         }
         public void IzaberiSlatkis()
         {
@@ -67,10 +77,23 @@ namespace ClientForms.GUIKontroler
                 MessageBox.Show("Niste odabrali slatkiš.");
                 return;
             }
+            if (uc.DgvSlatkisi.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Odaberite jedan slatkiš.");
+                return;
+            }
             Slatkis s = (Slatkis)uc.DgvSlatkisi.SelectedRows[0].DataBoundItem;
             uc.GbOdabraniSlatkis.Visible = true;
             uc.TxtID.Text = s.SlatkisID.ToString();
             uc.TxtNaziv.Text = s.Naziv;
+            foreach(Proizvodjac p in proizvodjaci)
+            {
+                if(p.ProizvodjacID == s.Proizvodjac.ProizvodjacID)
+                {
+                    uc.CmbProizvodjac.SelectedItem = p;
+                    break;
+                }
+            }
         }
         public void IzmeniSlatkis()
         {
@@ -90,7 +113,19 @@ namespace ClientForms.GUIKontroler
                 }
             };
             Communication.Instanca.SendRequest<Zahtev>(zahtev);
-
+        }
+        public void Osvezi()
+        {
+            uc.TxtID.Text = "";
+            uc.TxtNaziv.Text = "";
+            uc.CmbProizvodjac.SelectedItem = null;
+        }
+        public void OsveziTabelu(object sender, EventArgs args)
+        {
+            slatkisi = new BindingList<Slatkis>();
+            foreach (Slatkis s in GlavnaKontroler.slatkisi)
+                if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);
+            uc.Invoke(new Action(() => { uc.DgvSlatkisi.DataSource = slatkisi; }));
         }
     }
 }

@@ -53,6 +53,7 @@ namespace Server.Main
         public void Stop()
         {
             socket?.Close();
+            socket = null;
         }
 
 

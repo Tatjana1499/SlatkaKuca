@@ -13,10 +13,9 @@ namespace ClientForms.GUIKontroler
 {
     public class GlavnaKontroler
     {
-        
         public static List<Proizvodjac> proizvodjaci;
         public static List<Slatkis> slatkisi;
-
+        public static EventHandler IzmenjenSlatkis;
         public void PrimiPoruku()
         {
             Odgovor odgovor = new Odgovor();
@@ -43,12 +42,12 @@ namespace ClientForms.GUIKontroler
 
                             break;
                         case Operacija.DodajProizvodjaca:
-                            if (odgovor == null || !odgovor.Uspesnost)
+                            if (!odgovor.Uspesnost)
                                 MessageBox.Show("Došlo je do greške, proizvođač nije upamćen.");
                             else
                             {
                                 MessageBox.Show("Proizvođač je uspešno upamćen.");
-                                proizvodjaci.Add((Proizvodjac)odgovor.Poruka);
+                                if(proizvodjaci != null) proizvodjaci.Add((Proizvodjac)odgovor.Poruka);
                             }
                             break;
                         case Operacija.VratiProizvodjace:
@@ -57,7 +56,7 @@ namespace ClientForms.GUIKontroler
                         case Operacija.DodajSlatkise:
                             if(!odgovor.Uspesnost)
                             {
-                                MessageBox.Show("Slatkiši nisu dodati, popuni sva polja.");
+                                MessageBox.Show("Slatkiši nisu dodati.");
                                 continue;
                             }
                             MessageBox.Show("Uspešno dodati slatkiši.");
@@ -90,15 +89,17 @@ namespace ClientForms.GUIKontroler
                                 MessageBox.Show("Slatkiš nije izmenjen.");
                                 continue;
                             }
-                            MessageBox.Show("Uspesno izmenjen slatkiš.");
                             foreach(Slatkis s in slatkisi)
                             {
                                 if(s.SlatkisID == ((Slatkis)odgovor.Poruka).SlatkisID)
                                 {
                                     s.Naziv = ((Slatkis)odgovor.Poruka).Naziv;
                                     s.Proizvodjac = ((Slatkis)odgovor.Poruka).Proizvodjac;
+                                    break;
                                 }
                             }
+                            IzmenjenSlatkis(null, EventArgs.Empty);
+                            MessageBox.Show("Uspesno izmenjen slatkiš.");
                             break;
                     }
                 }
@@ -112,10 +113,7 @@ namespace ClientForms.GUIKontroler
         {
             foreach (Proizvodjac proizvodjac in proizvodjaci)
             {
-                if (proizvodjac.ProizvodjacID == s.Proizvodjac.ProizvodjacID)
-                {
-                    return proizvodjac;
-                }
+                if (proizvodjac.ProizvodjacID == s.Proizvodjac.ProizvodjacID) return proizvodjac;
             }
             return null;
         }
