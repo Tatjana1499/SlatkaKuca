@@ -15,6 +15,8 @@ namespace ClientForms.GUIKontroler
     {
         public static List<Proizvodjac> proizvodjaci;
         public static List<Slatkis> slatkisi;
+        public static List<ProdajnoMesto> prMesta;
+        public static List<Pakovanje> pakovanja;
         public static EventHandler IzmenjenSlatkis;
         public static EventHandler ObrisanSlatkis;
 
@@ -55,6 +57,12 @@ namespace ClientForms.GUIKontroler
                         case Operacija.VratiProizvodjace:
                             proizvodjaci = (List<Proizvodjac>)odgovor.Poruka;
                             break;
+                        case Operacija.VratiPakovanja:
+                            pakovanja = (List<Pakovanje>)odgovor.Poruka;
+                            break;
+                        case Operacija.VratiPrMesta:
+                            prMesta = (List<ProdajnoMesto>)odgovor.Poruka;
+                            break;
                         case Operacija.DodajSlatkise:
                             if(!odgovor.Uspesnost)
                             {
@@ -90,7 +98,16 @@ namespace ClientForms.GUIKontroler
                                 MessageBox.Show("Prodajno mesto nije dodato.");
                                 continue;
                             }
-                            MessageBox.Show("Uspesno dodato prodajno mesto.");
+                            MessageBox.Show("Uspešno dodato prodajno mesto.");
+                            if (prMesta != null) prMesta.Add((ProdajnoMesto)odgovor.Poruka);
+                            break;
+                        case Operacija.UnesiDnevnuProdaju:
+                            if (odgovor.Uspesnost == false)
+                            {
+                                MessageBox.Show("Dnevna prodaja nije uneta, ponovljen datum.");
+                                continue;
+                            }
+                            MessageBox.Show("Uspešno uneta dnevna prodaja.");
                             break;
                         case Operacija.IzmeniSlatkis:
                             if (odgovor.Uspesnost == false)

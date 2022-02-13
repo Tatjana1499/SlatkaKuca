@@ -16,6 +16,9 @@ namespace Common
         VratiSlatkise,
         ObrisiSlatkis,
         DodajPrMesto,
-        IzmeniSlatkis
+        IzmeniSlatkis,
+        VratiPrMesta,
+        VratiPakovanja,
+        UnesiDnevnuProdaju
     }
 }

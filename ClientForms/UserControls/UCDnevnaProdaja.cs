@@ -20,5 +20,20 @@ namespace ClientForms.UserControls
             kontroler = new UnesiDnevnuProdajuKontroler(this);
             kontroler.InitData();
         }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            kontroler.PretraziSlatkise();
+        }
+
+        private void btnIzaberi_Click(object sender, EventArgs e)
+        {
+            kontroler.UnosDnevnePr();
+        }
+
+        private void btnUnesi_Click(object sender, EventArgs e)
+        {
+            kontroler.Unesi();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Domain
 
         public string NazivTabele => "DnevnaProdaja";
 
-        public string UbaciVrednosti => $" '{KomentarPrMesta}', {KolicinaProdatih}, {DatumProdaje}";
+        public string UbaciVrednosti => $"{Pakovanje.PakovanjeID}, {ProdajnoMesto.ProdajnoMestoID}, '{DatumProdaje}', {KolicinaProdatih}, '{KomentarPrMesta}'";
         public string PostaviVrednosti => $"KomentarPrMesta = '{KomentarPrMesta}', KolicinaProdatih = {KolicinaProdatih}, DatumProdaje = {DatumProdaje}";
 
         public string UslovIzbacivanja => $"{DatumProdaje} = Id"; //SREDI!!!!!!!

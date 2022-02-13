@@ -66,6 +66,16 @@ namespace Server.Main
                         odgovor.Operacija = Operacija.VratiProizvodjace;
                         if (odgovor.Poruka == null) odgovor.Uspesnost = false;
                         break;
+                    case Operacija.VratiPakovanja:
+                        odgovor.Poruka = Kontroler.Instanca.VratiPakovanja();
+                        odgovor.Operacija = Operacija.VratiPakovanja;
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
+                        break;
+                    case Operacija.VratiPrMesta:
+                        odgovor.Poruka = Kontroler.Instanca.VratiPrMesta();
+                        odgovor.Operacija = Operacija.VratiPrMesta;
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
+                        break;
                     case Operacija.DodajSlatkise:
                         odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.DodajSlatkise;
@@ -85,6 +95,10 @@ namespace Server.Main
                         odgovor.Poruka = zahtev.Poruka;
                         odgovor.Operacija = Operacija.DodajPrMesto;
                         Kontroler.Instanca.DodajPrMesto((ProdajnoMesto)zahtev.Poruka);
+                        break;
+                    case Operacija.UnesiDnevnuProdaju:
+                        odgovor.Operacija = Operacija.UnesiDnevnuProdaju;
+                        Kontroler.Instanca.UnesiDnevnuProdaju((DnevnaProdaja)zahtev.Poruka);
                         break;
                     case Operacija.IzmeniSlatkis:
                         odgovor.Poruka = zahtev.Poruka;

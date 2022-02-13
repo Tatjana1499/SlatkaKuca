@@ -87,28 +87,28 @@
             // kreirajToolStripMenuItem1
             // 
             this.kreirajToolStripMenuItem1.Name = "kreirajToolStripMenuItem1";
-            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
             this.kreirajToolStripMenuItem1.Text = "Kreiraj novi";
             this.kreirajToolStripMenuItem1.Click += new System.EventHandler(this.kreirajToolStripMenuItem1_Click);
             // 
             // pretragaToolStripMenuItem
             // 
             this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
-            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.pretragaToolStripMenuItem.Text = "Pretraga";
             this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.pretragaToolStripMenuItem_Click);
             // 
             // izmenaToolStripMenuItem
             // 
             this.izmenaToolStripMenuItem.Name = "izmenaToolStripMenuItem";
-            this.izmenaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.izmenaToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.izmenaToolStripMenuItem.Text = "Izmena";
             this.izmenaToolStripMenuItem.Click += new System.EventHandler(this.izmenaToolStripMenuItem_Click);
             // 
             // brisanjeToolStripMenuItem
             // 
             this.brisanjeToolStripMenuItem.Name = "brisanjeToolStripMenuItem";
-            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.brisanjeToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.brisanjeToolStripMenuItem.Text = "Brisanje";
             this.brisanjeToolStripMenuItem.Click += new System.EventHandler(this.brisanjeToolStripMenuItem_Click);
             // 
@@ -138,8 +138,9 @@
             // unosRezultataToolStripMenuItem
             // 
             this.unosRezultataToolStripMenuItem.Name = "unosRezultataToolStripMenuItem";
-            this.unosRezultataToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.unosRezultataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.unosRezultataToolStripMenuItem.Text = "Unos rezultata";
+            this.unosRezultataToolStripMenuItem.Click += new System.EventHandler(this.unosRezultataToolStripMenuItem_Click);
             // 
             // pnlGlavni
             // 

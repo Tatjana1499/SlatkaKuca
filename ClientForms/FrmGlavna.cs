@@ -66,5 +66,10 @@ namespace ClientForms
         {
             PromeniPanel(new UCIzmeniSlatkis());
         }
+
+        private void unosRezultataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PromeniPanel(new UCDnevnaProdaja());
+        }
     }
 }

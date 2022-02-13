@@ -44,7 +44,33 @@ namespace Server.AplikacionaLogika
                 throw;
             }
             return ((VratiProizvodjaceSO)so).proizvodjaci;
-
+        }
+        public List<ProdajnoMesto> VratiPrMesta()
+        {
+            OpstaSO so = new VratiPrMestaSO();
+            try
+            {
+                so.ExecuteTemplate();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return ((VratiPrMestaSO)so).prMesta;
+        }
+        
+             public List<Pakovanje> VratiPakovanja()
+        {
+            OpstaSO so = new VratiPakovanjaSO();
+            try
+            {
+                so.ExecuteTemplate();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return ((VratiPakovanjaSO)so).pakovanja;
         }
         public List<Slatkis> VratiSlatkise()
         {
@@ -80,6 +106,11 @@ namespace Server.AplikacionaLogika
         public void DodajPrMesto(ProdajnoMesto prodajnoMesto)
         {
             OpstaSO so = new DodajPrMestoSO(prodajnoMesto);
+            so.ExecuteTemplate();
+        }
+        public void UnesiDnevnuProdaju(DnevnaProdaja dnevnaProdaja)
+        {
+            OpstaSO so = new UnesiDnevnuProdajuSO(dnevnaProdaja);
             so.ExecuteTemplate();
         }
     }

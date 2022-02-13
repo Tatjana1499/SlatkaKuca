@@ -19,9 +19,12 @@ namespace ClientForms.GUIKontroler
         Proizvodjac proizvodjac;
         public PretragaSlatkisaKontroler(UCPretragaSlatkisa uc)
         {
-            Zahtev zahtev = new Zahtev() { Operacija = Operacija.VratiProizvodjace };
-            Communication.Instanca.SendRequest<Zahtev>(zahtev);
-            while (GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            if (GlavnaKontroler.proizvodjaci == null)
+            {
+                Zahtev zahtev = new Zahtev() { Operacija = Operacija.VratiProizvodjace };
+                Communication.Instanca.SendRequest<Zahtev>(zahtev);
+                while (GlavnaKontroler.proizvodjaci == null) Thread.Sleep(10);
+            }
             this.uc = uc;
         }
         public void InitData()
@@ -40,9 +43,12 @@ namespace ClientForms.GUIKontroler
                 MessageBox.Show("Niste odabrali proizvođača.");
                 return;
             }
-            Zahtev zahtevSl = new Zahtev() { Operacija = Operacija.VratiSlatkise };
-            Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
-            while (GlavnaKontroler.slatkisi == null) Thread.Sleep(10);
+            if (GlavnaKontroler.slatkisi == null)
+            {
+                Zahtev zahtevSl = new Zahtev() { Operacija = Operacija.VratiSlatkise };
+                Communication.Instanca.SendRequest<Zahtev>(zahtevSl);
+                while (GlavnaKontroler.slatkisi == null) Thread.Sleep(10);
+            }
             slatkisi = new BindingList<Slatkis>();
             foreach (Slatkis s in GlavnaKontroler.slatkisi)
                 if (s.Proizvodjac.ProizvodjacID == proizvodjac.ProizvodjacID) slatkisi.Add(s);

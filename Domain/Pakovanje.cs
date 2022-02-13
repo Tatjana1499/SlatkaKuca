@@ -31,7 +31,7 @@ namespace Domain
         {
             Pakovanje p = new Pakovanje
             {
-                PakovanjeID = (int)reader["PakovanjeID"],
+                PakovanjeID = (int)reader["Id"],
                 Naziv = (string)reader["Naziv"],
                 UgljeniHidrati = (double)reader["UgljeniHidrati"],
                 Proteini = (double)reader["Proteini"],

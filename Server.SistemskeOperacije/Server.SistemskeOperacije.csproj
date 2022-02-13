@@ -49,6 +49,9 @@
     <Compile Include="OpstaSO.cs" />
     <Compile Include="PrijavaSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnesiDnevnuProdajuSO.cs" />
+    <Compile Include="VratiPakovanjaSO.cs" />
+    <Compile Include="VratiPrMestaSO.cs" />
     <Compile Include="VratiProizvodjaceSO.cs" />
     <Compile Include="VratiSlatkiseSO.cs" />
   </ItemGroup>
