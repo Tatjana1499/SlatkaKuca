@@ -19,6 +19,7 @@ namespace Common
         IzmeniSlatkis,
         VratiPrMesta,
         VratiPakovanja,
-        UnesiDnevnuProdaju
+        UnesiDnevnuProdaju,
+        Onemoguceno
     }
 }

@@ -21,7 +21,7 @@ namespace ClientForms
         public FrmGlavna()
         {
             InitializeComponent();
-            kontroler = new GlavnaKontroler();
+            kontroler = new GlavnaKontroler(this);
             Thread thread = new Thread(kontroler.PrimiPoruku);
             thread.IsBackground = true;
             thread.Start();
@@ -70,6 +70,11 @@ namespace ClientForms
         private void unosRezultataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PromeniPanel(new UCDnevnaProdaja());
+        }
+
+        private void FrmGlavna_Load(object sender, EventArgs e)
+        {
+            kontroler.PosaljiKraj();
         }
     }
 }

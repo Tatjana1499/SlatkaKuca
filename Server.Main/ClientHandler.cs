@@ -16,6 +16,9 @@ namespace Server.Main
     {
         Socket socket;
         CommunicationHelper helper;
+        public static EventHandler uspesnoPrijavljen;
+        public static EventHandler odjavljenKorisnik;
+
         public ClientHandler(Socket socket)
         {
             this.socket = socket;
@@ -51,9 +54,11 @@ namespace Server.Main
                 {
                     case Operacija.Prijava:
                         odgovor.Poruka = Kontroler.Instanca.Login((User)zahtev.Poruka);
-                        if(odgovor.Poruka == null)  odgovor.Uspesnost = false;
-                        break;
+                        if (odgovor.Poruka == null) odgovor.Uspesnost = false;
+                        if (odgovor.Uspesnost) uspesnoPrijavljen(this, EventArgs.Empty);
+                            break;
                     case Operacija.Kraj:
+                        odjavljenKorisnik(this, EventArgs.Empty);
                         kraj = true;
                         break;
                     case Operacija.DodajProizvodjaca:
@@ -131,6 +136,23 @@ namespace Server.Main
                    // OdjavljenKlijent?.Invoke(this, EventArgs.Empty);
                 }
             }
+        }
+        public void OnemoguciPrijavu()
+        {
+            Odgovor odgovor = new Odgovor() 
+            { 
+               Operacija = Operacija.Onemoguceno,
+               Poruka = "Postoji već prijavljen korisnik"
+            };
+            helper.Send(odgovor);
+        }
+        public void Zatvori()
+        {
+            Zahtev zahtev = new Zahtev()
+            {
+                Operacija = Operacija.Kraj
+            };
+            helper.Send(zahtev);
         }
     }
 }

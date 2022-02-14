@@ -30,6 +30,15 @@ namespace ClientForms.GUIKontroler
                 Communication.Instanca.Connect();
                 Communication.Instanca.SendRequest(zahtev);
                 Odgovor odgovor = Communication.Instanca.GetResult<Odgovor>();
+                if (odgovor.Operacija == Operacija.Onemoguceno)
+                {
+                    MessageBox.Show((string)odgovor.Poruka);
+                    frmPrijava.Invoke(new Action(() =>
+                    {
+                        frmPrijava.Close();
+                    }));
+                    return;
+                }
                 Sesija.Instanca.User = (User)odgovor.Poruka;
 
                 if (Sesija.Instanca.User != null)

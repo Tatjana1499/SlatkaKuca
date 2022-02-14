@@ -102,7 +102,6 @@ namespace ClientForms
             this.Controls.Add(this.lblKorIme);
             this.Name = "FrmPrijava";
             this.Text = "Prijava";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrijava_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

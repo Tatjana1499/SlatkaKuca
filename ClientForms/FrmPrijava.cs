@@ -32,9 +32,5 @@ namespace ClientForms
         {
             prijavaKontroler.Osvezi((TextBox)sender);
         }
-        private void FrmPrijava_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //NAPRAVI
-        }
     }
 }

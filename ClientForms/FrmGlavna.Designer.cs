@@ -138,7 +138,7 @@
             // unosRezultataToolStripMenuItem
             // 
             this.unosRezultataToolStripMenuItem.Name = "unosRezultataToolStripMenuItem";
-            this.unosRezultataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.unosRezultataToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.unosRezultataToolStripMenuItem.Text = "Unos rezultata";
             this.unosRezultataToolStripMenuItem.Click += new System.EventHandler(this.unosRezultataToolStripMenuItem_Click);
             // 
@@ -161,6 +161,7 @@
             this.Name = "FrmGlavna";
             this.Text = "FrmGlavna";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmGlavna_FormClosed);
+            this.Load += new System.EventHandler(this.FrmGlavna_Load);
             this.meniGlavni.ResumeLayout(false);
             this.meniGlavni.PerformLayout();
             this.ResumeLayout(false);

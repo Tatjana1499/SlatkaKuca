@@ -19,6 +19,12 @@ namespace ClientForms.GUIKontroler
         public static List<Pakovanje> pakovanja;
         public static EventHandler IzmenjenSlatkis;
         public static EventHandler ObrisanSlatkis;
+        Form form;
+
+        public GlavnaKontroler(Form form)
+        {
+            this.form = form;
+        }
 
         public void PrimiPoruku()
         {
@@ -32,7 +38,8 @@ namespace ClientForms.GUIKontroler
                     {
                         if(z.Operacija == Operacija.Kraj)
                         {
-                            //GASENJE KLIJENTA ZBOG GASENJA SERVERA
+                            form.Invoke(new Action(() =>form.Close()));
+                            MessageBox.Show("Server ugašen");
                         }
                         return;
                     }
@@ -142,6 +149,10 @@ namespace ClientForms.GUIKontroler
                 if (proizvodjac.ProizvodjacID == s.Proizvodjac.ProizvodjacID) return proizvodjac;
             }
             return null;
+        }
+        public void PosaljiKraj()
+        {
+            Zahtev zahtev = new Zahtev() { Operacija = Operacija.Kraj };
         }
     }
 }
